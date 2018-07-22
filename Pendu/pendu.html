@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+        PENDU
+<hr>
+<br>
+<button onclick="somme()">Faire choix</button>
+<div class="reponse"></div>
+<script>
+    let motATrouver = ["bonjour","salut","coucou"] // VARIABLE / tableau des mots à trouver
+    let random = (min, max) =>{ // FONCTION / retourne un nombre aléatoire 
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+    let motRandom = motATrouver[random(0, 3)]; // VARIABLE / mot à trouver
+    let nbLettres = motRandom.length; // VARIABLE / nombre de lettres à trouver
+    console.log(nbLettres)
+    console.log(motRandom)
+    let tabTentative = [];
+    for (let i = 0; i < motRandom.length; i++){
+        tabTentative[i] = "_";
+    }
+    let lettreMnquantes = motRandom.length;
+    let tentative = 0; // VARIABLE / nombre de tentative du joueur 
+    // let checkLettre = motRandom.indexOf(essai) // VARIABLE / vérifie si la lettre est dans le mot / retourne l'index de la lettre ou -1
+
+    while (nbLettres > 0) { //  BOUCLE
+        alert(tabTentative.join(" ")); // ???
+    // VERIFICATION
+        let proposition = prompt("devine une lettre."); // VARIABLE / lettre proposée par le joueur
+            if (proposition === null) { // CONDITION 
+                break; // Quitter la boucle
+            }
+            else if (proposition.length > 1) {
+                alert("tu ne dois saisir qu'une seul lettre.");
+            }else{
+                // mettre a jour l'état du jeu
+                for (let j = 0; j > motRandom.length; j++) {
+                    if (motRandom === proposition) {
+                        tabTentative[j] = tentative;
+                        lettreMnquantes--;
+                    }
+                }
+            }
+    }
+    alert(tabTentative.join(" "));
+    alert("gagné");
+    
+</script>
+</body>
+</html>
