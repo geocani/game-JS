@@ -1,0 +1,42 @@
+body{
+    background-color: #05aefc;
+    font-family: 'Poiret One', cursive;
+}
+.plateau{
+    display: flex;
+    width: 600px;
+    height: 300px;
+    margin: 3em auto;
+    background-image: url("bg-card.png");
+    border-radius: .2em;
+    box-shadow: 0 2.5em 0.9em -2em #555;
+}
+.pendu{
+    text-align: center;
+    width: 50%;
+    /* border: 1px dotted red; */
+}
+.pendu img{
+    width: 70%;
+    /* border: 1px dotted red; */
+}
+.game{
+    text-align: center;
+    width: 50%;
+    /* border: 1px dotted red; */
+}
+.titre{
+width: 100%;
+}
+.lettres{
+
+}
+.notif{
+
+}
+.input{
+
+}
+.envoyer{
+
+}
