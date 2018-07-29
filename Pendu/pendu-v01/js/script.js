@@ -20,15 +20,16 @@ let proposition = $('.input').val();
 $('.start').click( () =>{
     if (lettreManquantes > 0) { //  Si lettre manquante plus grand que 0
         zoneLettres.text(tabTentative.join(" "))// Ecriture des lettres manquante
-        for (let j = 0; j < motSecret.length; j++) {
-            if (motSecret[j] === proposition) {
+        for (let j = 0; j < motSecret.length; j++) { // comparer proposition et lettre du mot secret
+            if (motSecret[j] === proposition) { // si la lettre est bonne
                 tabTentative[j] = proposition;
                 lettreManquantes--;
                 tentative++;
+                zoneLettres.text(tabTentative.join(" "))
                 console.log(tentative)
-            }
-            if(lettreManquantes == 0) {
-                alert('gagné')
+            } else { // si la lettre n est pas bonne
+                zoneLettres.text(tabTentative.join(" "))
+                console.log("pas de dans")
             }
         }
     }
