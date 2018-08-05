@@ -17,7 +17,7 @@ let lettres = $('.lettres');
 
 
 
-$('.start').click( () =>{
+
     while (lettreManquantes > 0) { //  BOUCLE
         lettres.text(tabTentative.join(" "))
         //alert(tabTentative.join(" ")); // .join() / fusionne les element du tab dans une string (donnee separee par ())
@@ -46,4 +46,3 @@ $('.start').click( () =>{
             }
         }
     }
-})
