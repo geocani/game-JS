@@ -7,7 +7,7 @@ $('document').ready(()=>{ // page chargée
     
     $('#commencer').click(()=>{ // Quand cliqué sur START
 
-        $('.perdu').html(''); // réactualiser notification
+        // $('.perdu').html(''); // réactualiser notification
         secondes = 60 // réactualiser chrono
         $('#nombre').val(""); // reactualiser champ
         let code = random(0, 21); // Générer un code secret
