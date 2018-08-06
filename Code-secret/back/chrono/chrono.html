@@ -10,61 +10,6 @@
     <title>Code Secret</title>
 </head>
 <body>
-
-    <div class="header">
-        <div class="titre">
-
-        </div>
-        <div class="chrono">
-
-        </div>
-        <div class="titre">
-
-        </div>
-    </div>
-    <div class="cont-board">
-        <div class="board-left">
-            <div class="img">
-
-            </div>
-            <div class="story">
-
-            </div>
-            <div class="start">
-
-            </div>
-        </div>
-        <div class="board-right">
-            <div class="indice">
-
-            </div>
-            <div class="champ">
-
-            </div>
-            <div class="notif">
-
-            </div>
-            <div class="stat">
-                
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="container-board">
         <h3>Les code se situe entre 0 et 20</h3>
         <p class="perdu"></p>
@@ -77,10 +22,25 @@
         <br>
         <button id="commencer">START</button>
     </div>
-
 <script src='js/script-codesecret.js'></script>
 <script>
-    
+
+    let secondes = 2;
+        $('document').ready(()=>{
+            $('#commencer').click(()=>{
+                let chrono = setInterval(()=>{ // setInterval -> une action tout les x temps
+                    if(secondes == 0) {
+                        clearInterval(chrono)
+                        $('.perdu').html('Perdu!');
+                    }
+                    else {
+                        secondes--;
+                        $('.chrono').html(secondes);
+                    }
+                }, 1000); // MILI-SECONDE 
+            });
+        });
+
 </script>
 </body>
 </html>
