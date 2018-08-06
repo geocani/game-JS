@@ -1,7 +1,15 @@
 
 
 
+let lettre = "";
 
+$(document).keydown(function(e) {
+    lettre = e.keyCode;
+    
+
+});
+
+//     // console.log(lettre)
 
 
 $('.a').click(()=>{
