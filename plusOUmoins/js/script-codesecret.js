@@ -7,7 +7,7 @@ $('document').ready(()=>{ // page chargée
     
     $('#commencer').click(()=>{ // Quand cliqué sur START
 
-        // $('.perdu').html(''); // réactualiser notification
+        // $('.indice').html(''); // réactualiser notification
         secondes = 60 // réactualiser chrono
         $('#nombre').val(""); // reactualiser champ
         let code = random(0, 21); // Générer un code secret
@@ -17,7 +17,7 @@ $('document').ready(()=>{ // page chargée
             if(secondes == 0) { // SI chrono terminé
                 clearInterval(chrono) // Stop chrono
                 $('#paris').css({"visibility" : "hidden", "opacity" : "0"}) // CACHER le champ
-                $('.perdu').html('Perdu!'); // AFFICHER perdu
+                $('.indice').html('Perdu!'); // AFFICHER perdu
             }
             else { // SINON
                 secondes--; // Décrémenter chrono
@@ -34,13 +34,13 @@ $('document').ready(()=>{ // page chargée
     
             if (paris == code) { // SI proposition = code
                 clearInterval(chrono); // Stop chrono
-                $('.perdu').html('Gagné!'); // AFFICHER gagné
+                $('.indice').html('Gagné!'); // AFFICHER gagné
             }
             else if (paris < code) {
-                $('.perdu').html('C est plus!'); // AFFICHER plus
+                $('.indice').html('C est plus!'); // AFFICHER plus
             }
             else {
-                $('.perdu').html('C est moins!'); // AFFICHER moins
+                $('.indice').html('C est moins!'); // AFFICHER moins
             }
 
             $('#nombre').val(""); // reactualise champ

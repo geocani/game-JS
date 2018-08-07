@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel='stylesheet' href='css/style-codesecret.css'>
+    <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='crossorigin='anonymous'></script>
+    <title>Code Secret</title>
+    <style>
+        #rec{
+            position :relative;
+            animation: rec 60s infinite;
+        }
+        @keyframes rec {
+            from {width: 20px;}
+            to {width: 200px;}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <p><span class="titre">+ </span><span class="chrono"> OU </span><span class="titre"> -</span></p>
+    </div>
+    <div class="cont-board">
+        <div class="card-left">
+            <div class="card-top">
+                <img src="sablier.svg" alt="IMAGE">
+            </div>
+            <div class="card-bot">
+                <p class="titre-bot">Règles:</p>
+                <div class="card-bot-p">
+                    <p><span class="bold">1.</span> Le nombre se situe entre 0 et 60.</p>
+                    <p><span class="bold">2.</span> 60 seconde pour trouver le nombre.</p>
+                    <p><span class="bold">3.</span> Des indices s'afficheront pendant la partie.</p>
+                </div>
+                <div class="start">
+                    <button class="start" id="commencer">START</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-right">
+                <div class="card-top">
+                    <div class="indice">
+                        <h4>INDICE</h4>
+                    </div>
+                    <form action="" class="form-codesecret" id="paris" role="form">
+                        <div class="champ">
+                            <input type="text" class="champ" id="nombre" autocomplete="off">
+                        </div>
+                    </form>
+                    <div class="notif">
+                        <p><span class="bold">Tips: </span> Appuyez sur enter pour valider.</p>
+                    </div>
+                </div>
+            <div class="card-bot">
+                <p class="titre-bot">Stats</p>
+                <div class="card-bot-p">
+                    <p><span class="bold">Tentative: </span> 4</p>
+                    <p><span class="bold">Code trouvé: </span> 3</p>
+                    <p><span class="bold">Score: </span> 70%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <svg
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    width="200.32736mm"
+    height="36.663689mm"
+    viewBox="0 0 200.32736 36.663689"
+    version="1.1"
+    id="svg8"
+    inkscape:version="0.92.3 (2405546, 2018-03-11)"
+    sodipodi:docname="morph.svg">
+   <defs
+      id="defs2" />
+   <sodipodi:namedview
+      id="base"
+      pagecolor="#ffffff"
+      bordercolor="#666666"
+      borderopacity="1.0"
+      inkscape:pageopacity="0.0"
+      inkscape:pageshadow="2"
+      inkscape:zoom="0.7"
+      inkscape:cx="148.40198"
+      inkscape:cy="-39.756124"
+      inkscape:document-units="mm"
+      inkscape:current-layer="layer1"
+      showgrid="false"
+      fit-margin-top="0"
+      fit-margin-left="0"
+      fit-margin-right="0"
+      fit-margin-bottom="0"
+      inkscape:window-width="1920"
+      inkscape:window-height="1001"
+      inkscape:window-x="-9"
+      inkscape:window-y="-9"
+      inkscape:window-maximized="1" />
+   <metadata
+      id="metadata5">
+     <rdf:RDF>
+       <cc:Work
+          rdf:about="">
+         <dc:format>image/svg+xml</dc:format>
+         <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+         <dc:title></dc:title>
+       </cc:Work>
+     </rdf:RDF>
+   </metadata>
+   <g
+      inkscape:label="Calque 1"
+      inkscape:groupmode="layer"
+      id="layer1"
+      transform="translate(-3.7797618,-112.16965)">
+     <rect
+        style="fill:#4a85a0;fill-opacity:1;stroke:none;stroke-width:1.2670033;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+        id="rec"
+        width="20px"
+        height="36.663689"
+        x="3.7797618"
+        y="112.16965" />
+   </g>
+ </svg>
+
+
+
+
+ok
+
+
+
+
+
+
+    <div class="container-board">
+        <h3>Les code se situe entre 0 et 20</h3>
+        <p class="perdu"></p>
+        <h2 class="chrono">60</h2>
+        <h2 class="reponse">Trouvez le code</h2>
+        <form action="" class="form-codesecret" id="paris" role="form">
+            <input type="text" class="form-control" id="nombre" placeholder="votre nombre" autocomplete="off">
+            <button class="btn-parier" type="submit">Parier</button>
+        </form>
+        <br>
+        <button >START</button>
+    </div>
+
+<script src='js/script-codesecret.js'></script>
+<script>
+    
+</script>
+</body>
+</html>
