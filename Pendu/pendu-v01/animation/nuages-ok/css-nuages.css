@@ -8,14 +8,31 @@
     position :relative;
     animation: nuage1 50s infinite;
 }
+#nuage2{
+    position :relative;
+    animation: nuage2 80s infinite;
+}
 @keyframes nuage1 {
     0% {
         transform : translate(-150px,0); 
-        opacity: 0.5; 
+        opacity: 1; 
         }
     50% {
          
         opacity: 1; 
+    }
+    100% {
+        transform : translate(600px, 0); 
+        }
+}
+@keyframes nuage2 {
+    0% {
+        transform : translate(0,0); 
+        opacity: 1; 
+        }
+    50% {
+         
+        opacity: 0; 
     }
     100% {
         transform : translate(600px, 0); 
