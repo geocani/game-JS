@@ -10,27 +10,29 @@
     <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='crossorigin='anonymous'></script>
     <title>Code Secret</title>
     <style>
-        #rec{
-            position :relative;
-            animation: rec 60s infinite;
+        @keyframes rec {
+            from {height: 0px;}
+            to {height: 320px;}
         }
-        /* @keyframes rec {
-            from {width: 20px;}
-            to {width: 200px;}
-        } */
     </style>
 </head>
 <body>
-
     <div class="header">
-        <p><span class="titre">+ </span><span class="chrono"> OU </span><span class="titre"> -</span></p>
+        <p><span class="titre">+ </span><span class="ou"> OU </span><span class="titre"> -</span></p>
     </div>
     <div class="cont-board">
         <div class="card-left">
             <div class="card-top">
-                <svg width="340" height="320">
-                    <rect id="rec" width="340" height="320" style="fill:rgb(54, 145, 197);"/>
-                </svg>
+                <div class="gauge">
+                    <svg width="340" height="320">
+                        <rect id="rec" width="340" height="320" style="fill:rgb(255, 255, 255);"/>
+                    </svg>
+                    <div class="position">
+                        <span class="chrono">
+                            <p>60</p>
+                        </span>
+                    </div>
+                </div>
             </div>
             <div class="card-bot">
                 <p class="titre-bot">Règles:</p>
@@ -59,8 +61,8 @@
                     </div>
                 </div>
             <div class="card-bot">
-                <p class="titre-bot">Stats</p>
-                <div class="card-bot-p">
+                <p class="titre-bot">Stats:</p>
+                <div class="card-bot-p-left">
                     <p><span class="bold">Tentative: </span> 4</p>
                     <p><span class="bold">Code trouvé: </span> 3</p>
                     <p><span class="bold">Score: </span> 70%</p>
@@ -68,34 +70,8 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-ok
-
-
-
-
-
-
-    <div class="container-board">
-        <h3>Les code se situe entre 0 et 20</h3>
-        <p class="perdu"></p>
-        <h2 class="chrono">60</h2>
-        <h2 class="reponse">Trouvez le code</h2>
-        <form action="" class="form-codesecret" id="paris" role="form">
-            <input type="text" class="form-control" id="nombre" placeholder="votre nombre" autocomplete="off">
-            <button class="btn-parier" type="submit">Parier</button>
-        </form>
-        <br>
-        <button >START</button>
-    </div>
-
 <script src='js/script-codesecret.js'></script>
 <script>
-    
 </script>
 </body>
 </html>
