@@ -4,7 +4,7 @@ let random = (min, max) =>{ // FONCTION / retourne un nombre aléatoire
 let paris = null;
 
 $('document').ready(()=>{ // page chargée
-    
+    console.log('teste')
     $('#commencer').click(()=>{ // Quand cliqué sur START
 
         // $('.indice').html(''); // réactualiser notification

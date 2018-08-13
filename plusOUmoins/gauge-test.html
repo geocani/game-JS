@@ -9,34 +9,19 @@
     <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='crossorigin='anonymous'></script>
     <title>TITRE</title>
     <style>
-        .bg{
-            background-color: black;
-            width: 340px;
-            height: 379px;
-
-            
+        .class{
+            background-color: red;
         }
-        #rec{
-            position :relative;
-            animation: rec 10s infinite;
-        }
-        @keyframes rec {
-            from {height: 0px;}
-            to {height: 600px;}
+        #id{
+            border: 3px solid blue;
         }
     </style>
     
 </head>
 <body>
-    <div class="bg">
-        <svg width="340" height="379">
-            <rect id="rec" width="340" height="370" style="fill:rgb(255, 255, 255);"/>
-        </svg>
-    </div>
-
-<script src='js/script.js'></script>
+<div  id="id"><h1>hello world</h1></div>
 <script>
-
+    // $('#id').addClass('class')
 </script>
 </body>
 </html>

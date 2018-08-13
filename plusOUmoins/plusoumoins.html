@@ -25,11 +25,11 @@
             <div class="card-top">
                 <div class="gauge">
                     <svg width="340" height="320">
-                        <rect id="rec" width="340" height="320" style="fill:rgb(255, 255, 255);"/>
+                        <rect id="rec"  width="340" height="320" style="fill:rgb(255, 255, 255);"/>
                     </svg>
                     <div class="position">
                         <span class="chrono">
-                            <p>60</p>
+                            <p>?</p>
                         </span>
                     </div>
                 </div>
@@ -63,15 +63,79 @@
             <div class="card-bot">
                 <p class="titre-bot">Stats:</p>
                 <div class="card-bot-p-left">
-                    <p><span class="bold">Tentative: </span> 4</p>
-                    <p><span class="bold">Code trouvé: </span> 3</p>
-                    <p><span class="bold">Score: </span> 70%</p>
+                    <p><span class="bold">Tentative: </span><span class="tent">--</span> </p>
+                    <p><span class="bold">Code trouvé: </span><span class="code_trouve"> --</span></p>
+                    <p><span class="bold">Score: </span> --%</p>
                 </div>
             </div>
         </div>
     </div>
-<script src='js/script-codesecret.js'></script>
+
 <script>
+let secondes = 60;
+let random = (min, max) =>{ // FONCTION / retourne un nombre aléatoire 
+    return Math.floor(Math.random() * (max - min) + min)}
+let tentative = 0; // nombre de tentative
+let codeTrouve = 0;
+let moyenne = 0;
+let paris = null; // paris du joueur
+
+$('document').ready(()=>{ // page chargée
+
+    $('#commencer').click(()=>{ // Quand cliqué sur START
+        $('#rec').addClass('rec') // lancer la gauge
+        // $('.indice').html(''); // réactualiser notification
+        secondes = 60 // réactualiser chrono
+        $('#nombre').val(""); // reactualiser champ
+        let code = random(0, 21); // Générer un code secret
+        console.log(code)
+        $('#paris').css({"visibility" : "visible", "opacity" : "1"}) // AFFICHER le champ
+        let chrono = setInterval(()=>{ // setInterval -> une action tout les x temps
+            if(secondes == 0) { // SI chrono terminé
+                clearInterval(chrono) // Stop chrono
+                $('#paris').css({"visibility" : "hidden", "opacity" : "0"}) // CACHER le champ
+                $('.indice').html('Perdu!'); // AFFICHER perdu
+                console.log(tentative)
+            }
+            else { // SINON
+                secondes--; // Décrémenter chrono
+                $('.chrono').html(secondes); // AFFICHER seconde
+            }
+        }, 1000); // MILI-SECONDE 
+
+
+
+
+        $('#paris').submit((event)=>{ // Qaund le form est ENVOYER (enviter rechargement de la page) 
+            event.preventDefault(); // Désactive les evenement par défaut du form
+            paris = $('#nombre').val(); // Récuperer la proposition.
+    
+            if (paris == code) { // SI proposition = code
+                codeTrouve++;
+                clearInterval(chrono); // Stop chrono
+                $('.indice').html('Gagné!'); // AFFICHER gagné
+                $('.tent').html(tentative)
+                $('.code_trouve').html(codeTrouve)
+                console.log(codeTrouve)
+            }
+            else if (paris < code) {
+                $('.indice').html('C est plus!'); // AFFICHER plus
+                tentative++;
+                console.log(tentative)
+            }
+            else {
+                $('.indice').html('C est moins!'); // AFFICHER moins
+                tentative++;
+                console.log(tentative)
+            }
+
+            $('#nombre').val(""); // reactualise champ
+          
+        })
+    });
+
+    
+});
 </script>
 </body>
 </html>
