@@ -4,10 +4,13 @@ let random = (min, max) =>{ // FONCTION / retourne un nombre aléatoire
 let paris = null;
 
 $('document').ready(()=>{ // page chargée
-    console.log('teste')
+    
     $('#commencer').click(()=>{ // Quand cliqué sur START
 
         // $('.indice').html(''); // réactualiser notification
+        
+        $('#rec').addClass('rec')
+        lancerChrono()
         secondes = 60 // réactualiser chrono
         $('#nombre').val(""); // reactualiser champ
         let code = random(0, 21); // Générer un code secret

@@ -44,6 +44,9 @@
                 <div class="start">
                     <button class="start" id="commencer">START</button>
                 </div>
+                <div class="continuer">
+                    <button class="continuer" >CONTINUER</button>
+                </div>
             </div>
         </div>
         <div class="card-right">
@@ -82,8 +85,14 @@ let paris = null; // paris du joueur
 
 $('document').ready(()=>{ // page chargée
 
+
+// COMMENCER
+
     $('#commencer').click(()=>{ // Quand cliqué sur START
-        $('#rec').addClass('rec') // lancer la gauge
+        $('.start').css({"display": "none"})
+        $('.continuer').css({"display":"block"})
+        $('#rec').css({"animation-play-state": "initial"}) // relancer la gauge (apres avoir trouvé un code)
+        $('#rec').addClass('rec') // lancer la gauge (en début de partie)
         // $('.indice').html(''); // réactualiser notification
         secondes = 60 // réactualiser chrono
         $('#nombre').val(""); // reactualiser champ
@@ -104,7 +113,20 @@ $('document').ready(()=>{ // page chargée
         }, 1000); // MILI-SECONDE 
 
 
+// CONTINUER
 
+  
+
+
+
+
+
+
+
+
+
+
+// CONDITION
 
         $('#paris').submit((event)=>{ // Qaund le form est ENVOYER (enviter rechargement de la page) 
             event.preventDefault(); // Désactive les evenement par défaut du form
@@ -114,27 +136,30 @@ $('document').ready(()=>{ // page chargée
                 codeTrouve++;
                 clearInterval(chrono); // Stop chrono
                 $('.indice').html('Gagné!'); // AFFICHER gagné
-                $('.tent').html(tentative)
-                $('.code_trouve').html(codeTrouve)
-                console.log(codeTrouve)
+                $('.tent').html(tentative) // AFFICHER nb de tentative
+                $('.code_trouve').html(codeTrouve) // AFFICHER nb code trouvé
+                $('.rec').css({"animation-play-state" : "paused"}) // figer la gauge
+                $('.continuer button').css({"background-color":"rgb(0, 0, 0)","color":"rgb(177, 184, 194)"})
+                $('.continuer').attr('id', 'continuer');
+                return // sortir de la fonction
             }
             else if (paris < code) {
                 $('.indice').html('C est plus!'); // AFFICHER plus
                 tentative++;
-                console.log(tentative)
             }
             else {
                 $('.indice').html('C est moins!'); // AFFICHER moins
                 tentative++;
-                console.log(tentative)
+
             }
 
             $('#nombre').val(""); // reactualise champ
           
         })
     });
-
-    
+    $('#continuer').click(()=>{
+        console.log('reprise du jeu')
+    })
 });
 </script>
 </body>
