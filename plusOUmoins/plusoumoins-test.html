@@ -4,16 +4,49 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel='stylesheet' href='css/style.css'>
+    <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='crossorigin='anonymous'></script>
+    <title>TITRE</title>
+</head>
+<body>
+<style>
+
+</style>
+
+<script src='js/script.js'></script>
+<script>
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel='stylesheet' href='css/style-codesecret.css'>
     <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='crossorigin='anonymous'></script>
-    <title>Code Secret</title>
+    <title>GameJS / Plus Ou Moins</title>
     <style>
-        @keyframes rec {
-            from {height: 0px;}
-            to {height: 320px;}
-        }
+
     </style>
 </head>
 <body>
@@ -71,7 +104,7 @@
                 <div class="card-bot-p-left">
                     <p><span class="bold">Tentative: </span><span class="tent">--</span> </p>
                     <p><span class="bold">Code trouvé: </span><span class="code_trouve"> --</span></p>
-                    <p><span class="bold">Score: </span> --%</p>
+                    <p><span class="bold">Score: </span><span class="moyenne"> --%</p>
                 </div>
             </div>
         </div>
@@ -82,8 +115,11 @@ let secondes = 60;
 let random = (min, max) =>{ // FONCTION / retourne un nombre aléatoire 
     return Math.floor(Math.random() * (max - min) + min)}
 let tentative = 0; // nombre de tentative
-let codeTrouve = 0;
-let moyenne = 0;
+let win = 0;
+let moyenne = ()=>{
+    return (100 / tentative) * win
+}
+
 let paris = null; // paris du joueur
 
 $('document').ready(()=>{ // page chargée
@@ -108,6 +144,7 @@ $('document').ready(()=>{ // page chargée
                 clearInterval(chrono) // Stop chrono
                 $('#paris').css({"visibility" : "hidden", "opacity" : "0"}) // CACHER le champ
                 $('.indice').html('Perdu!'); // AFFICHER perdu
+                console.log("moyenne" + moyenne())
                 console.log(tentative)
             }
             else { // SINON
@@ -146,11 +183,14 @@ $('document').ready(()=>{ // page chargée
             paris = $('#nombre').val(); // Récuperer la proposition.
     
             if (paris == code) { // SI proposition = code
-                codeTrouve++;
+                win++;
+                tentative++;
                 clearInterval(chrono); // Stop chrono
                 $('.indice').html('Gagné!'); // AFFICHER gagné
                 $('.tent').html(tentative) // AFFICHER nb de tentative
-                $('.code_trouve').html(codeTrouve) // AFFICHER nb code trouvé
+                $('.code_trouve').html(win) // AFFICHER nb code trouvé
+                $('.moyenne').html(moyenne() + " %") // AFFICHER nb code trouvé
+                console.log("moyenne" + moyenne())
                 $('.rec').css({"animation-play-state" : "paused"}) // figer la gauge
                 $('.continuer button').css({"background-color":"rgb(0, 0, 0)","color":"rgb(177, 184, 194)"})
                 $('.continuer').attr('id', 'continuer');
