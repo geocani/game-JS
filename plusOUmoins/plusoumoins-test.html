@@ -50,7 +50,7 @@
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="header" id="idHeader">
         <p><span class="titre">+ </span><span class="ou"> OU </span><span class="titre"> -</span></p>
     </div>
     <div class="cont-board">
@@ -119,7 +119,6 @@ let win = 0;
 let moyenne = ()=>{
     return (100 / tentative) * win
 }
-
 let paris = null; // paris du joueur
 
 $('document').ready(()=>{ // page chargée
@@ -136,7 +135,7 @@ $('document').ready(()=>{ // page chargée
         // $('.indice').html(''); // réactualiser notification
         secondes = 60 // réactualiser chrono
         $('#nombre').val(""); // reactualiser champ
-        let code = random(0, 21); // Générer un code secret
+        let code = random(0, 61); // Générer un code secret
         console.log(code)
         $('#paris').css({"visibility" : "visible", "opacity" : "1"}) // AFFICHER le champ
         let chrono = setInterval(()=>{ // setInterval -> une action tout les x temps
@@ -166,16 +165,6 @@ $('document').ready(()=>{ // page chargée
 
         
     })
-
-
-
-
-
-
-
-
-
-
 // CONDITION
 
         $('#paris').submit((event)=>{ // Qaund le form est ENVOYER (enviter rechargement de la page) 
