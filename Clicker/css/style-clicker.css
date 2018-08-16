@@ -1,0 +1,91 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+0.0 RESET
+1.0 KEYFRAME
+2.0 HEADER
+3.0 BODY
+    3.1 board left
+    3.2 board right
+4.0 FOOTER
+5.0 MEDIAQUERIES
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+0.0 RESET:
+--------------------------------------------------------------*/
+*{
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/*--------------------------------------------------------------
+1.0 KEYFRAME:
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+2.0 HEADER:
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+3.0 BODY:
+--------------------------------------------------------------*/
+.cont-board{
+    width: 300px;
+    margin: 50px auto 0 auto;
+}
+.score{
+    text-align: center;
+    width: 300px;
+    border: 1px solid red;
+}
+.clicker{
+    width: 300px;
+    border: 1px solid red;
+}
+.clicker button{
+    width: 300px;
+    height: 50px;
+}
+.bonus{
+    text-align: center;
+    width: 300px;
+    border: 1px solid red;
+}
+.bonus-input{
+    width: 300px;
+    border: 1px solid red;
+}
+/*--------------------------------------------------------------
+4.0 FOOTER:
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+5.0 MEDIAQUERIES:
+--------------------------------------------------------------*/
+/* Desktop specific */
+@media (max-width: 979px)
+{
+
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px)
+{
+
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px)
+{
+
+}
+/* Landscape phones and down */
+@media (max-width: 480px)
+{
+
+}
