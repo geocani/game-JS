@@ -32,30 +32,31 @@ body, html {
 /*--------------------------------------------------------------
 3.0 BODY:
 --------------------------------------------------------------*/
-.cont_board{
+.board{
     width: 300px;
     margin: 50px auto 0 auto;
 }
-.score{
+.cont_score{
     text-align: center;
     width: 300px;
     border: 1px solid red;
 }
-.clicker{
+.cont_click{
     width: 300px;
     border: 1px solid red;
 }
-.clicker button{
+.cont_click button{
+    width: 300px;
+    height: 75px;
+}
+.cont_bonus{
+    text-align: center;
+    width: 300px;
+    border: 1px solid red;
+}
+.cont_bonus button{
     width: 300px;
     height: 50px;
-}
-.bonus{
-    text-align: center;
-    width: 300px;
-    border: 1px solid red;
-}
-.bonus_input{
-    width: 300px;
     border: 1px solid red;
 }
 /*--------------------------------------------------------------
