@@ -1,0 +1,111 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+0.0 RESET
+1.0 HEADER
+2.0 SIDE MENU
+3.0 MAIN
+	3.1 board left
+    3.2 board right
+4.0 MEDIA QUERIES
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+0.0 RESET
+--------------------------------------------------------------*/
+body{
+    background-color: #e8de5bff;
+}
+h1{
+    color: #e8de5bff;
+    text-shadow: 
+        2px   0  0   #835f0bff, 
+        -2px   0  0   #835f0bff, 
+        0    2px 0   #835f0bff, 
+        0   -2px 0   #835f0bff, 
+        1px  1px 0   #835f0bff, 
+        -1px -1px 0   #835f0bff, 
+        1px -1px 0   #835f0bff, 
+        -1px  1px 0   #835f0bff,
+        1px  1px 5px #835f0bff;
+    padding-top: 20px;
+    padding-bottom: 15px; 
+}
+h2{
+    color: #e8de5bff;
+    text-shadow: 
+        2px   0  0   #835f0bff, 
+        -2px   0  0   #835f0bff, 
+        0    2px 0   #835f0bff, 
+        0   -2px 0   #835f0bff, 
+        1px  1px 0   #835f0bff, 
+        -1px -1px 0   #835f0bff, 
+        1px -1px 0   #835f0bff, 
+        -1px  1px 0   #835f0bff,
+        1px  1px 5px #835f0bff;
+    margin-bottom: 15px; 
+}
+/*--------------------------------------------------------------
+0.0 CUSTOM BOOTSTRAP
+--------------------------------------------------------------*/
+.container {
+    background-color: rgb(199, 175, 120);
+    text-align: center;
+    /* border: 3px solid #835f0bff; */
+    box-shadow:         inset 0 0 10px #000000;
+    width: 900px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+table{
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.btn-color{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #e8de5bff;
+    box-shadow: 
+        2px 0 0#835f0bff, 
+        -2px 0 0 #835f0bff, 
+        0 2px 0 #835f0bff, 
+        0 -2px 0   #835f0bff, 
+        1px  1px 0   #835f0bff, 
+        -1px -1px 0   #835f0bff, 
+        1px -1px 0   #835f0bff, 
+        -1px  1px 0   #835f0bff,
+        1px  1px 5px #835f0bff;
+    color: #835f0bff;
+    font-weight: 900;
+    border: 1px solid #835f0bff;
+
+}
+
+/*--------------------------------------------------------------
+0.0 CARTE
+--------------------------------------------------------------*/
+.carte{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/carte.svg");
+    background-size: 100px;
+    background-position: center; 
+    border: 1px solid #835f0bff;
+    box-shadow: 
+    2px   0  0   #835f0bff, 
+   -2px   0  0   #835f0bff, 
+    0    2px 0   #835f0bff, 
+    0   -2px 0   #835f0bff, 
+    1px  1px 0   #835f0bff, 
+   -1px -1px 0   #835f0bff, 
+    1px -1px 0   #835f0bff, 
+   -1px  1px 0   #835f0bff,
+    1px  1px 5px #835f0bff;
+    
+}
+/*--------------------------------------------------------------
+0.0 MEDIA Q
+--------------------------------------------------------------*/
