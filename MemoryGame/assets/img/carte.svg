@@ -27,7 +27,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
      inkscape:cx="161.49237"
-     inkscape:cy="103.73211"
+     inkscape:cy="132.30354"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -71,6 +71,6 @@
          id="tspan817"
          x="14.71969"
          y="283.26056"
-         style="fill:#835f0b;fill-opacity:1;stroke:none;stroke-width:0.09217313;stroke-opacity:1">?</tspan></text>
+         style="fill:#835f0b;fill-opacity:1;stroke:none;stroke-width:0.09217313;stroke-opacity:1;-inkscape-font-specification:'Luckiest Guy';font-family:'Luckiest Guy';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">?</tspan></text>
   </g>
 </svg>
