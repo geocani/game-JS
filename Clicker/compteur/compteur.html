@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel='stylesheet' href='css/style.css'>
+    <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='crossorigin='anonymous'></script>
+    <title>TITRE</title>
+</head>
+<body>
+<style>
+.count{
+    font-size: 100px;
+    position: absolute;
+}
+.count-leave{
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+.count-leave-active{
+    transition: 1s;
+    transform: translateY(-50px) scale(0);
+    opacity: 0;
+}
+.count-enter{
+    transform: translateY(50px) scale(0);
+    opacity: 0;
+}
+.count-enter-active{
+    transition: 1s;
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+</style>
+
+
+<button>+1</button>
+<h1 class="count count-leave">0</h1>
+<h1 class="count count-enter">1</h1>
+
+
+<script>
+    let nb = 1;
+    $('button').click(()=>{
+        nb++
+        // LEAVE
+        $('.count-leave').addClass('count-leave-active') // Ajoute la class
+        setTimeout(() => {  // supprime la class
+
+            $('.count-leave').remove()
+        }, 1000);
+
+        // ENTER
+        $('.count-enter').addClass('count-enter-active') // Ajoute la class
+        setTimeout(() => {  // supprime la class
+
+            $('.count-enter').addClass("count-leave").removeClass('count-enter count-enter-active')
+            $('body').append('<h1 class="count count-enter">'+nb+'</h1>')
+        }, 1000);
+        
+        
+    })
+    
+</script>
+</body>
+</html>
