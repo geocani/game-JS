@@ -10,10 +10,10 @@
 4.0 MEDIA QUERIES
 --------------------------------------------------------------*/
 .right1{
-    /* display:  none; */
+    display:  none;
 }
 .right2{
-    display:  none;
+    /* display:  none; */
 }
 .chronometre{
     font-size: 100px;

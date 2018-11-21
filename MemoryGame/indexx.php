@@ -66,11 +66,16 @@
                 </div>
                 <!-- Pendant la partie -->
                 <div class="right2">
-                    <h1 class="chronometre">60</h1>
+                    <div class="chrono">
+                        <h1 class="chronometre">60</h1>
+                    </div>
+                    <div class="score" id="score">
+                        <h3>10/10</h3>
+                    </div>
                     <p>
                         Cliquez sur deux carte pour vérifier si elles sont identique.
                     </p>
-                    <button type="button" class="btn btn-color">PAUSE</button>
+                    <button type="button" class="btn btn-color">START</button>
                 </div>
                 <!-- Apres la partie -->
                 <div class="right3">
@@ -105,6 +110,37 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script type="text/javascript" language="javascript">
+
+	generation();
+	
+	function generation()
+	{
+        var nb_alea; // Stock le nombre aléatoire à chaque passage de la boucle
+        var nb_img=""; 
+        var test = true; // Vérifie si le nb aléa a déja été généré TRUE par défaut -> force une nouvelle génération.
+        var chaine = "";// stockage des nb aléatoire déja généré.
+		
+		for (var i=0;i<16;i++) // Boucle 16 fois
+		{
+			while (test==true)
+			{
+				nb_alea = Math.floor(Math.random()*16) + 1; // Génère un nombre aléatoire
+				if(chaine.indexOf("-" + nb_alea + "-")>-1) // Si le nombre existe dans la chaine de test
+					nb_alea = Math.floor(Math.random()*16) + 1; // Génère un nouveau nombre
+				else
+				{
+                    nb_img = Math.floor((nb_alea+1)/2); //8 paires pour 16 places ==> 2 générations différentes par image
+                    // Selectionne une carte et génère une image -> au click lance la fonction VERIFIER() ?? Pourquoi pas modif css ??
+                    document.getElementById('carte' + i).innerHTML = "<img width='50px' style='cursor:pointer;' id='img" + i + "' src='assets/img/" + nb_img + ".png' onClick='verifier(\"img" + i + "\", \"mini" + nb_img + "\")' alt='' />";
+					chaine += "-" + nb_alea + "-"; // Ajoute le Nb dans la chaine de test
+					test=false;
+				}			
+			}
+			test=true;			
+		}
+	}
+	
+</script>
   </body>
 </html>
