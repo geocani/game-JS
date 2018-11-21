@@ -89,8 +89,32 @@
         let chaine = ""; // stockage des nb aléatoire déja généré.
 
         purger();
+
+        for (let i=0; i=10; i++){ // Boucle dix fois
+           while(test == true){ // Si le nombre a déja été utilisé
+                nbRandom = Math.floor(Math.random() * 16); // Génère un nb aléatoire entre 0 et 16
+                if(chaine.indexOf("-" + nbRandom + "-")> -1){ // Cherche dans la chaine si le nombre existe ?? pourquoi pas tableau ??
+                    nbRandom = Math.floor(Math.random() * 16); // Si n'existe pas générer un nombre
+                }else{ // sinon -1
+                    // Génère un bouton -> au click inscrit la valeur du bouton dans l'input pass
+                    document.getElementById('case' + nbRandom).innerHTML = "<input type='nutton' class='btn' value='" + i + "'onClick='document.getElementById(\"motPasse\").value +=" + i + "' />";
+                    test = false;
+                    chaine += "-" + nbRandom + "-"; // Enregistre le nb dans la chaine de teste
+                }
+           } 
+           test = false;
+        }
+
     }
 
+    function purger(){ // Reinitialisation - annule et relance une nouvelle génération
+        for (let i=0; i<16; i++) { // chaque passage de la boucle le calque selectionné doit etre reinitialisé
+            document.getElementById('case' + i).innerHTML = ""; // Vide les cartes
+        }
+
+        document.getElementById('identifiant').value = "Votre identifiant"; // Réinitialise l'input id
+        document.getElementById('motPasse').value = ""; // Vide l'input pass
+    }
 
 
 
