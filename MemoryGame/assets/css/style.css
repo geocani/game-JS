@@ -130,11 +130,10 @@ table{
 0.0 CARTE
 --------------------------------------------------------------*/
 .carte{
+    overflow: hidden;
     width: 85px;
     height: 85px;
-    background-image: url("../img/carte.png");
-    background-size: 100px;
-    background-position: center; 
+
     border-radius: 10px;
     box-shadow: 
     2px   0  0   #835f0bff, 
@@ -146,6 +145,10 @@ table{
     1px -1px 0   #835f0bff, 
    -1px  1px 0   #835f0bff,
     1px  1px 5px #835f0bff;
+}
+.carte img{
+    width: 85px;
+    padding: 0;
 }
 /*--------------------------------------------------------------
 0.0 MEDIA Q
