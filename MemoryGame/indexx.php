@@ -112,6 +112,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script type="text/javascript" language="javascript">
 
+
+    let nbClics = 0; // Autorise deux clics apres le 2e réinitialisation a 0
+    let mini1 = ""; // Nom de la 1e carte cliqué
+    let mini2 = ""; // nom de la 2e carte cliqué
+
+
 	generation();
 	
 	function generation()
