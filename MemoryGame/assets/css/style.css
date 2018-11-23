@@ -10,16 +10,41 @@
 4.0 MEDIA QUERIES
 --------------------------------------------------------------*/
 .right1{
-    display:  none;
-}
-.right2{
     /* display:  none; */
 }
-.chronometre{
-    font-size: 100px;
+.right2{
+    display:  none;
+}
+.chrono{
+    
 }
 .right3{
     display:  none;
+}
+.perdu{
+    color: rgb(232, 124, 91);
+    text-shadow: 
+    2px   0  0   rgb(133, 58, 36), /* couleur droite */
+    -2px   0  0   rgb(133, 58, 36), /* couleur gauche */
+    0    2px 0   rgb(133, 58, 36), /* couleur bas */
+    0   -2px 0   rgb(133, 58, 36), /* couleur haut */
+    1px  1px 0   rgb(133, 58, 36), 
+    -1px -1px 0   rgb(133, 58, 36), 
+    1px -1px 0   rgb(133, 58, 36), 
+    -1px  1px 0   rgb(133, 58, 36),
+    1px  3px 5px rgb(63, 46, 6);
+}
+.conseil{
+    display: none;
+}
+.msg-perdu{
+    /* display: none; */
+}
+.stop{
+    display: none;
+}
+.recommencer{
+    /* display: none; */
 }
 /*--------------------------------------------------------------
 0.0 RESET
@@ -31,7 +56,7 @@ body{
 h1{
     color: #e8de5bff;
     text-shadow: 
-        2px   0  0   rgb(29, 11, 131), /* couleur droite */
+        2px   0  0   #835f0bff, /* couleur droite */
         -2px   0  0   #835f0bff, /* couleur gauche */
         0    2px 0   #835f0bff, /* couleur bas */
         0   -2px 0   #835f0bff, /* couleur haut */
@@ -43,6 +68,7 @@ h1{
         padding-top: 15px;
     padding-bottom: 30px; 
     font-size: 90px;
+    
 }
 h2{
     color: #e8de5bff;
@@ -57,6 +83,8 @@ h2{
         -1px  1px 0   #835f0bff,
         1px  1px 5px #835f0bff;
     margin-bottom: 15px; 
+    margin-top: 30px;
+    font-size: 70px;
 }
 h3{
     color: #e8de5bff;
@@ -134,7 +162,9 @@ table{
     overflow: hidden;
     width: 85px;
     height: 85px;
-
+    background-image: url('../img/back.png');
+    background-position: center;
+    background-size: 85px;
     border-radius: 10px;
     box-shadow: 
     2px   0  0   #835f0bff, 
@@ -151,6 +181,7 @@ table{
     width: 85px;
     padding: 0;
 }
+
 /*--------------------------------------------------------------
 0.0 MEDIA Q
 --------------------------------------------------------------*/

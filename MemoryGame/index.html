@@ -50,7 +50,7 @@
             <div class="col-6">
             <!-- Avant la partie -->
                 <div class="right1">
-                    <h2>Principe</h2>
+                    <h3>Principe</h3>
                     <p>
                         Le jeu se compose de paires de cartes portant des illustrations identiques. 
                         L'ensemble des cartes est mélangé, puis étalé face contre table.
@@ -62,20 +62,27 @@
                         Vous gagnez la partie si vous trouvez toutes les paires en moins de 60 secondes.
                         Pour commencer cliquez sur "START".
                     </p>
-                    <button type="button" class="btn btn-color" >START</button> 
+                    <button type="button" class="btn btn-color" onClick="start()">START</button> 
                 </div>
                 <!-- Pendant la partie -->
                 <div class="right2">
                     <div class="chrono" id="chrono">
-                        <h1 class="chronometre">60</h1>
+                        <h2>60</h2>
                     </div>
                     <div class="score" id="score">
-                        <h3>10/10</h3>
+                        <h3>0/10</h3>
                     </div>
-                    <p>
-                        Cliquez sur deux carte pour vérifier si elles sont identique.
-                    </p>
-                    <button type="button" class="btn btn-color" onClick="window.location.reload()">START</button> <!-- réactualise la page -->
+                    <div class="tentative">
+                        <p>tentative: --</p>
+                    </div>
+                    <div class="conseil">
+                        <p>Cliquez sur deux cartes pour vérifier si elles sont identique.</p>
+                    </div>
+                    <div class="msg-perdu">
+                        <p>Vous avez perdu, cliquez sur recommencer.</p>
+                    </div>
+                    <button type="button" class="stop btn btn-color">STOP</button> 
+                    <button type="button" class="recommencer btn btn-color">RECOMMENCER</button> 
                 </div>
                 <!-- Apres la partie -->
                 <div class="right3">
@@ -99,112 +106,147 @@
     <div class="test">
 
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+        
+    // VARIABLES
+    let nbClics = 0; // Autorise deux clics, apres le 2e réinitialisation a 0
+    let carte1 = ""; // Nom de la 1e carte cliqué - Pour comparer les deux img
+    let carte2 = ""; // nom de la 2e carte cliqué
+    let case1 = ""; // nom de la 1e case cliqué - Pour éviter le double clic ?? Pourquoi pas tab ?? 
+    let case2 = ""; // nom de la 2e case cliqué
+    let imgOk = 0; // incrémenté de 2 à chaque bonne réponse
+    let nbErreurs = 0; // Restitue le score au cours de la partie - si 16 paires trouvées )-> fin de partie
+    let score = 0; // Score 
+    let depart = false; // Si les clics sont pris en compte - oui ou non comptabilise les clics
+    let tempsDebut = new Date().getTime(); // Sauvegarde l'heure a laquel le jeu a démarré (milliseconde) - Pour chrono ?? Pourquoi pas chrono ??
+    let secondes = 5;
+    let tentative = 0;
+    // FONCTIONS
+
+
+function go(){
     
-    <script>// VARIABLES
-
-let nbClics = 0; // Autorise deux clics, apres le 2e réinitialisation a 0
-let carte1 = ""; // Nom de la 1e carte cliqué - Pour comparer les deux img
-let carte2 = ""; // nom de la 2e carte cliqué
-let case1 = ""; // nom de la 1e case cliqué - Pour éviter le double clic ?? Pourquoi pas tab ?? 
-let case2 = ""; // nom de la 2e case cliqué
-let imgOk = 0; // incrémenté de 2 à chaque bonne réponse
-let nbErreurs = 0; // Restitue le score au cours de la partie - si 16 paires trouvées )-> fin de partie
-let score = 0; // Score 
-let depart = false; // Si les clics sont pris en compte - oui ou non comptabilise les clics
-let tempsDebut = new Date().getTime(); // Sauvegarde l'heure a laquel le jeu a démarré (milliseconde) - Pour chrono ?? Pourquoi pas chrono ??
+}
 
 
-// FONCTIONS
 
-let attente = setTimeout(function(){ // Parcoure toutes les <img> pour retourner les cartes visiblent - Se déclange au chargement de la page
-    for(let i=0; i<16 ; i++){ // Pour chaque img
-        document.getElementById('img' + i).src= "assets/img/back.png"; // Change la source de l'image
+
+
+    // START
+    function start(){
+    generation();
+    chrono();
+    attente();
     }
-    depart = true; // Quand toute les carte sont retournée, comptabiliser les clics
-}, 4000); // La fonction se lance apres 4s - empas avant retournement des cartes
-
-function generation()
-{
-    var nb_alea; // Stock le nombre aléatoire à chaque passage de la boucle
-    var nb_img=""; 
-    var test = true; // Vérifie si le nb aléa a déja été généré TRUE par défaut -> force une nouvelle génération.
-    var chaine = "";// stockage des nb aléatoire déja généré.
-    
-    for (var i=0;i<16;i++) // Boucle 16 fois
+    // CHRONO
+    function chrono(){ // sec=chrono max - laps=laps temps entre décrémentation.
+        setInterval(()=>{ // setInterval -> une action tout les x temps
+            if(secondes == 0) { // SI chrono terminé
+                clearInterval(chrono) // Stop chrono
+                // $('#paris').css({"visibility" : "hidden", "opacity" : "0"}) // CACHER le champ
+                $('.chrono').html("<h2 class='perdu'>Perdu !</h2>"); // AFFICHER perdu
+            }
+            else { // SINON
+                secondes--; // Décrémenter chrono
+                
+                $('.chrono').html("<h2>" + secondes +"</h2"); 
+            }
+        }, 1000); // MILI-SECONDE 
+    }
+    // ATTENTE()
+    function attente(){
+        setTimeout(function(){ // Parcoure toutes les <img> pour retourner les cartes visiblent - Se déclange au chargement de la page
+            for(let i=0; i<16 ; i++){ // Pour chaque img
+                document.getElementById('img' + i).src= "assets/img/back.png"; // Change la source de l'image pour la cacher
+            }
+            depart = true; // Quand toute les cartes sont retournée, comptabiliser les clics
+        }, 1000); // La fonction se lance apres 4s - empas avant retournement des cartes
+    }
+    // GENERATION()
+    function generation()
     {
-        while (test==true)
+        $('.right1').css({"display": "none"})
+        $('.right2').css({"display":"block"})
+        var nb_alea; // Stock le nombre aléatoire à chaque passage de la boucle
+        var nb_img=""; 
+        var test = true; // Vérifie si le nb aléa a déja été généré TRUE par défaut -> force une nouvelle génération.
+        var chaine = "";// stockage des nb aléatoire déja généré.
+        
+        for (var i=0;i<16;i++) // Boucle 16 fois
         {
-            nb_alea = Math.floor(Math.random()*16) + 1; // Génère un nombre aléatoire
-            if(chaine.indexOf("-" + nb_alea + "-")>-1) // Si le nombre existe dans la chaine de test
-                nb_alea = Math.floor(Math.random()*16) + 1; // Génère un nouveau nombre
-            else
+            while (test==true)
             {
-                nb_img = Math.floor((nb_alea+1)/2); //8 paires pour 16 places ==> 2 générations différentes par image
-                // Selectionne une carte et génère une image -> au click lance la fonction VERIFIER() ?? Pourquoi pas modif css ??                  onClick='verifier(\"img" + i + "\",                          \"mini" + nb_img + "\")' alt='' />";
-                document.getElementById('case' + i).innerHTML = "<img style='cursor:pointer;' id='img" + i + "' src='assets/img/" + nb_img + ".png' onClick='verifier(\"img" + i + "\",\"" + nb_img + "\")' alt='' />";
-                chaine += "-" + nb_alea + "-"; // Ajoute le Nb dans la chaine de test
-                test=false;
-            }			
+                nb_alea = Math.floor(Math.random()*16) + 1; // Génère un nombre aléatoire
+                if(chaine.indexOf("-" + nb_alea + "-")>-1) // Si le nombre existe dans la chaine de test
+                    nb_alea = Math.floor(Math.random()*16) + 1; // Génère un nouveau nombre
+                else
+                {
+                    nb_img = Math.floor((nb_alea+1)/2); //8 paires pour 16 places ==> 2 générations différentes par image
+                    // Selectionne une carte et génère une image -> au click lance la fonction VERIFIER() ?? Pourquoi pas modif css ??                  onClick='verifier(\"img" + i + "\",                          \"mini" + nb_img + "\")' alt='' />";
+                    document.getElementById('case' + i).innerHTML = "<img style='cursor:pointer;' id='img" + i + "' src='assets/img/" + nb_img + ".png' onClick='verifier(\"img" + i + "\",\"" + nb_img + "\")' alt='' />";
+                    chaine += "-" + nb_alea + "-"; // Ajoute le Nb dans la chaine de test
+                    test=false;
+                }			
+            }
+            test=true;			
         }
-        test=true;			
     }
-}
-// selectionne l'image cliqué
-// Remplace la source pour afficher la carte
-function verifier(limg, source){ // LIMG=ID ?? l'appeler ID !!! - de l'image cliqué // SOURCE=NOM de l'image cliqué - Double clic -> meme image mais pas meme case
-    if (depart == true){
-        nbClics++;
-        document.getElementById(limg).src = 'assets/img/' + source + '.png'; // Selectionne l'img en cours par son ID (LIMG) // Reconstruit la source
-        if (nbClics == 1){ // 1e clic enregistre info 1e carte
-            carte1 = source;
-            case1 = limg;
-        }else{ // 2e clic enregistre info 2e carte et lance une verification
-            carte2 = source;
-            case2 = limg;
-            if (case1 != case2){ // Si l'itilisateur a cliqué sur deux cases différentes
-                depart = false; // l'utilisateur ne peux plus cliquer
-                if (carte1 != carte2){ // Si carte1 differente de carte2
-                    let attente = setTimeout(function(){ // Retourne les cartes // S'éfectue au bout de 1s
-                        document.getElementById(case1).src= "assets/img/back.png"; // Retourne case1
-                        document.getElementById(case2).src= "assets/img/back.png"; // Retourne case2
-                        depart = true; // Redonne l'autorisation de cliquer
-                        nbClics = 0;
-                        nbErreurs++; // Ajoute une erreur
-                        if (nbErreurs < 11) score = 10 - nbErreurs; // Calcule les erreur et les affiche
-                        document.getElementById("score").innerHTML = score; // Affiche score
-                    }, 1000); 
-                }else{ // Si carte identique
-                    depart = true; // Autorise le clic
-                    nbClics = 0; // Reinitialise le nb de clics
-                    imgOk += 2; // Incrémente de 2 les bonne reponse
-                    if (imgOk == 16){ // Si toute les image ont été trouvée
-                        let difTemps = Math.floor((new Date().getTime() - tempsDebut)/1000); // Soustrait le temps de fin au temps de début et l'arrondi
-                        document.getElementById("score").innerHTML = score; // Affiche score
-                        document.getElementById("chrono").innerHTML = "vous avez mis" + score + "seconde."; // Affiche le temps du jeu
+    // VERIFIER() // selectionne l'image cliqué // Remplace la source pour afficher la carte
+    function verifier(limg, source){ // LIMG=ID ?? l'appeler ID !!! - de l'image cliqué // SOURCE=NOM de l'image cliqué - Double clic -> meme image mais pas meme case
+        if (depart == true){
+            nbClics++;
+            document.getElementById(limg).src = 'assets/img/' + source + '.png'; // Selectionne l'img en cours par son ID (LIMG) // Reconstruit la source
+            if (nbClics == 1){ // 1e clic enregistre info 1e carte
+                carte1 = source;
+                case1 = limg;
+            }else{ // 2e clic enregistre info 2e carte et lance une verification
+                carte2 = source;
+                case2 = limg;
+                if (case1 != case2){ // Si l'itilisateur a cliqué sur deux cases différentes
+                    depart = false; // l'utilisateur ne peux plus cliquer
+                    if (carte1 != carte2){ // Si carte1 differente de carte2
+                        let attentes = setTimeout(function(){ // Retourne les cartes // S'éfectue au bout de 1s
+                            document.getElementById(case1).src= "assets/img/back.png"; // Retourne case1
+                            document.getElementById(case2).src= "assets/img/back.png"; // Retourne case2
+                            depart = true; // Redonne l'autorisation de cliquer
+                            tentative++;
+                            nbClics = 0;
+                            nbErreurs++; // Ajoute une erreur
+                            $('.tentative').html("<p>tentative: " + tentative +"</p>"); // Affiche nb tentative
+                            //if (nbErreurs < 11) score = 10 - nbErreurs; // Calcule les erreur et les affiche
+                            //document.getElementById("score").innerHTML = score; // Affiche score
+                        }, 1000); 
+                    }else{ // Si carte identique
+                        depart = true; // Autorise le clic
+                        nbClics = 0; // Reinitialise le nb de clics
+                        imgOk += 2; // Incrémente de 2 les bonne reponse
+                        tentative++;
+                        score++;
+                        $('.tentative').html("<p>tentative: " + tentative +"</p>"); // Affiche nb tentative
+                        $('.score').html("<h3>" + score +"/8</h3>"); // Affiche score
+                        if (imgOk == 16){ // Si toute les image ont été trouvée
+                            let difTemps = Math.floor((new Date().getTime() - tempsDebut)/1000); // Soustrait le temps de fin au temps de début et l'arrondi
+                            document.getElementById("scor").innerHTML = score; // Affiche score
+                            document.getElementById("chrono").innerHTML = "vous avez mis" + score + "seconde."; // Affiche le temps du jeu
+                        }
                     }
+                }else{ // deux clics sur la meme image
+                    if (nbClics == 2) nbClics = 1; // Ne rien faire et reinitialiser un clic
                 }
-            }else{ // deux clics sur la meme image
-                if (nbClics == 2) nbClics = 1; // Ne rien faire et reinitialiser un clic
-            }
-            if (difTemps > 180){ // Si temps depassé
-                document.getElementById("chrono").innerHTML = "temps depassé, perdu !"
-                depart = false; // Utilisateur ne peu plus cliquer
-            }
+                if (difTemps > 180){ // Si temps depassé
+                    document.getElementById("chrono").innerHTML = "temps depassé, perdu !"
+                    depart = false; // Utilisateur ne peu plus cliquer
+                }
 
+            }
         }
     }
-}
-
-// APPEL DE FONCTION
-
-generation()
-
-</script>
-  </body>
+    </script>
+</body>
 </html>
