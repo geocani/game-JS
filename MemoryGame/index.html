@@ -15,34 +15,35 @@
     <div class="container">
         <div class="titre">
             <h1>Memory Game</h1>
+            <div class="couleur"></div>
         </div>
         <div class="row">
             <div class="col-6">
                 <table class="">
                     <tbody>
                         <tr>
-                            <td class="carte" id="case0"></td>
-                            <td class="carte" id="case1"></td>
-                            <td class="carte" id="case2"></td>
-                            <td class="carte" id="case3"></td>
+                            <td class="carte1" id="case0"></td>
+                            <td class="carte2" id="case1"></td>
+                            <td class="carte3" id="case2"></td>
+                            <td class="carte2" id="case3"></td>
                         </tr>
                         <tr>
-                            <td class="carte" id="case4"></td>
-                            <td class="carte" id="case5"></td>
-                            <td class="carte" id="case6"></td>
-                            <td class="carte" id="case7"></td>
+                            <td class="carte1" id="case4"></td>
+                            <td class="carte2" id="case5"></td>
+                            <td class="carte1" id="case6"></td>
+                            <td class="carte3" id="case7"></td>
                         </tr>
                         <tr>
-                            <td class="carte" id="case8"></td>
-                            <td class="carte" id="case9"></td>
-                            <td class="carte" id="case10"></td>
-                            <td class="carte" id="case11"></td>
+                            <td class="carte3" id="case8"></td>
+                            <td class="carte2" id="case9"></td>
+                            <td class="carte1" id="case10"></td>
+                            <td class="carte2" id="case11"></td>
                         </tr>
                         <tr>
-                            <td class="carte" id="case12"></td>
-                            <td class="carte" id="case13"></td>
-                            <td class="carte" id="case14"></td>
-                            <td class="carte" id="case15"></td>
+                            <td class="carte1" id="case12"></td>
+                            <td class="carte3" id="case13"></td>
+                            <td class="carte1" id="case14"></td>
+                            <td class="carte2" id="case15"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -50,19 +51,17 @@
             <div class="col-6">
             <!-- Avant la partie -->
                 <div class="right1">
-                    <h3>Principe</h3>
+                    <h3 class="principe">Principe</h3>
                     <p>
                         Le jeu se compose de paires de cartes portant des illustrations identiques. 
-                        L'ensemble des cartes est mélangé, puis étalé face contre table.
-                        Vous devez retourne deux cartes de votre choix. Si les cartes sont identiques, 
-                        vous avez gagné une manche et les carte disparaissent, sinon les cartes se retournent et 
-                        il ne vous reste plus qu'a recommencer. 
+                        Retourne deux cartes de votre choix. Si les cartes sont identiques, 
+                        vous avez gagné une manche, sinon les cartes se retournent et 
+                        il ne vous reste plus qu'a recommencer.  
                     </p>
                     <p>
-                        Vous gagnez la partie si vous trouvez toutes les paires en moins de 60 secondes.
                         Pour commencer cliquez sur "START".
                     </p>
-                    <button type="button" class="btn btn-color" onClick="start()">START</button> 
+                    <button type="button" class=" btn-anim btn btn-color" onClick="start()">START</button> 
                 </div>
                 <!-- Pendant la partie -->
                 <div class="right2">
@@ -82,16 +81,16 @@
                         <p>Vous avez perdu, cliquez sur recommencer.</p>
                     </div>
                     <button type="button" class="stop btn btn-color">STOP</button> 
-                    <button type="button" class="recommencer btn btn-color">RECOMMENCER</button> 
+                    <button type="button" class="recommencer btn btn-color" onClick="start()">RECOMMENCER</button> 
                 </div>
                 <!-- Apres la partie -->
                 <div class="right3">
                     <h2>Time:</h2>
                     <p>
                         Le jeu se compose de paires de cartes portant des illustrations identiques. 
-                        L'ensemble des cartes est mélangé, puis étalé face contre table.
-                        Vous devez retourne deux cartes de votre choix. Si les cartes sont identiques, 
-                        vous avez gagné une manche et les carte disparaissent, sinon les cartes se retournent et 
+                        Les cartes sont mélangées, puis étalées face contre table.
+                        Retourne deux cartes de votre choix. Si les cartes sont identiques, 
+                        vous avez gagné une manche, sinon les cartes se retournent et 
                         il ne vous reste plus qu'a recommencer. 
                     </p>
                     <p>
@@ -102,9 +101,6 @@
                 </div>
             </div>
         </div>  
-    </div>
-    <div class="test">
-
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -125,14 +121,11 @@
     let score = 0; // Score 
     let depart = false; // Si les clics sont pris en compte - oui ou non comptabilise les clics
     let tempsDebut = new Date().getTime(); // Sauvegarde l'heure a laquel le jeu a démarré (milliseconde) - Pour chrono ?? Pourquoi pas chrono ??
-    let secondes = 5;
+    let secondes = 20;
     let tentative = 0;
     // FONCTIONS
 
 
-function go(){
-    
-}
 
 
 
@@ -140,17 +133,27 @@ function go(){
 
     // START
     function start(){
-    generation();
-    chrono();
-    attente();
+        $('.chrono').html("<h2>60</h2>"); // AFFICHER perdu
+        $('.conseil').css({"display": "block"})
+        $('.msg-perdu').css({"display":"none"})
+        $('.stop').css({"display": "block"})
+        $('.recommencer').css({"display":"none"})
+        generation();
+        chrono();
+        attente();
     }
     // CHRONO
     function chrono(){ // sec=chrono max - laps=laps temps entre décrémentation.
         setInterval(()=>{ // setInterval -> une action tout les x temps
             if(secondes == 0) { // SI chrono terminé
+                console.log(secondes)
                 clearInterval(chrono) // Stop chrono
-                // $('#paris').css({"visibility" : "hidden", "opacity" : "0"}) // CACHER le champ
+                depart = false;
                 $('.chrono').html("<h2 class='perdu'>Perdu !</h2>"); // AFFICHER perdu
+                $('.conseil').css({"display": "none"})
+                $('.msg-perdu').css({"display":"block"})
+                $('.stop').css({"display": "none"})
+                $('.recommencer').css({"display":"block"})
             }
             else { // SINON
                 secondes--; // Décrémenter chrono
@@ -171,6 +174,7 @@ function go(){
     // GENERATION()
     function generation()
     {
+        console.log(secondes)
         $('.right1').css({"display": "none"})
         $('.right2').css({"display":"block"})
         var nb_alea; // Stock le nombre aléatoire à chaque passage de la boucle

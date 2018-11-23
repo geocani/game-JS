@@ -35,41 +35,68 @@
     1px  3px 5px rgb(63, 46, 6);
 }
 .conseil{
-    display: none;
+    /* display: none; */
 }
 .msg-perdu{
-    /* display: none; */
-}
-.stop{
     display: none;
 }
-.recommencer{
+.stop{
     /* display: none; */
 }
+.recommencer{
+    display: none;
+}
+.tentative{
+    margin-bottom: 45px;
+}
+.score{
+    margin-top: 30px;
+}
+.principe{
+    padding-top: 30px;
+    font-size: 50px;
+}
+
 /*--------------------------------------------------------------
 0.0 RESET
 --------------------------------------------------------------*/
 body{
-    background-color: rgb(199, 175, 120);
+    background-color: #FED75A;
     font-family: 'Luckiest Guy', cursive;
 }
-h1{
-    color: #e8de5bff;
+
+h1 {
+    color: rgb(223, 197, 114);
+    padding-top: 15px;
+    padding-bottom: 30px; 
+    font-size: 90px;
     text-shadow: 
-        2px   0  0   #835f0bff, /* couleur droite */
-        -2px   0  0   #835f0bff, /* couleur gauche */
-        0    2px 0   #835f0bff, /* couleur bas */
-        0   -2px 0   #835f0bff, /* couleur haut */
+        2px   0  0   #835f0bff, 
+        -2px   0  0   #835f0bff, 
+        0    2px 0   #835f0bff, 
+        0   -2px 0   #835f0bff, 
         1px  1px 0   #835f0bff, 
         -1px -1px 0   #835f0bff, 
         1px -1px 0   #835f0bff, 
         -1px  1px 0   #835f0bff,
-        1px  3px 5px rgb(63, 46, 6);
-        padding-top: 15px;
-    padding-bottom: 30px; 
-    font-size: 90px;
-    
+        1px  1px 5px #835f0bff;
+	/* background-image: -webkit-linear-gradient(#ffffff,#9bc7e2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #fff; */
+
 }
+
+/* h1:after {
+    text-align: center;
+	background: none;
+	content: attr(data-text);
+	left: 0;
+	position: absolute;
+	text-shadow: 0 3px 0 rgba(0, 0, 0, .3);
+	top: 0;
+	z-index: -1;
+} */
 h2{
     color: #e8de5bff;
     text-shadow: 
@@ -137,6 +164,8 @@ table{
     border-spacing: 10px;
 }
 .btn-color{
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: #e8de5bff;
@@ -153,12 +182,52 @@ table{
     color: #835f0bff;
     font-weight: 900;
     border: 1px solid #835f0bff;
+    transition: 0.2s;
+}
+.btn-color:hover{
+    transition: 0.2s;
+    transform: rotate(10deg);
+
 }
 
 /*--------------------------------------------------------------
 0.0 CARTE
 --------------------------------------------------------------*/
-.carte{
+.carte1{
+    overflow: hidden;
+    width: 85px;
+    height: 85px;
+    background-image: url('../img/back.png');
+    background-position: center;
+    background-size: 85px;
+    border-radius: 10px;
+    box-shadow: 
+    2px   0  0   #835f0bff, 
+   -2px   0  0   #835f0bff, 
+    0    2px 0   #835f0bff, 
+    0   -2px 0   #835f0bff, 
+    1px  1px 0   #835f0bff, 
+   -1px -1px 0   #835f0bff, 
+    1px -1px 0   #835f0bff, 
+   -1px  1px 0   #835f0bff,
+   1px  3px 5px rgb(63, 46, 6);
+}
+.couleur{
+    width: 120px;
+    height: 70px;
+    background-color: rgb(253, 203, 37);
+    box-shadow: 
+    2px   0  0   #835f0bff, 
+   -2px   0  0   #835f0bff, 
+    0    2px 0   #835f0bff, 
+    0   -2px 0   #835f0bff, 
+    1px  1px 0   #835f0bff, 
+   -1px -1px 0   #835f0bff, 
+    1px -1px 0   #835f0bff, 
+   -1px  1px 0   #835f0bff,
+   1px  3px 5px rgb(63, 46, 6);
+}
+.carte2{
     overflow: hidden;
     width: 85px;
     height: 85px;
@@ -181,6 +250,53 @@ table{
     width: 85px;
     padding: 0;
 }
+.carte1 img{
+    width: 85px;
+    padding: 0;
+}
+.carte2 img{
+    width: 85px;
+    padding: 0;
+}
+.carte1:hover{
+    transition: 0.5s;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+.carte2:hover{
+    transition: 0.5s;
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+.carte3 {
+    overflow: hidden;
+    width: 85px;
+    height: 85px;
+    background-image: url('../img/back.png');
+    background-position: center;
+    background-size: 85px;
+    border-radius: 10px;
+    box-shadow: 
+    2px   0  0   #835f0bff, 
+   -2px   0  0   #835f0bff, 
+    0    2px 0   #835f0bff, 
+    0   -2px 0   #835f0bff, 
+    1px  1px 0   #835f0bff, 
+   -1px -1px 0   #835f0bff, 
+    1px -1px 0   #835f0bff, 
+   -1px  1px 0   #835f0bff,
+   1px  3px 5px rgb(63, 46, 6);
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
+.carte3 img{
+    width: 85px;
+}
+.carte3:hover {
+    transform: rotate(-10deg);
+    transform: scale(1.1) rotate(4deg);
+  }
 
 /*--------------------------------------------------------------
 0.0 MEDIA Q
