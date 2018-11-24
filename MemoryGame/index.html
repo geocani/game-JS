@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"  />
     <title>Memory Game</title>
+    
 </head>
 <body>
     <div class="container">
         <div class="titre">
             <h1>Memory Game</h1>
-            <div class="couleur"></div>
         </div>
         <div class="row">
             <div class="col-6">
@@ -193,7 +193,7 @@
                 {
                     nb_img = Math.floor((nb_alea+1)/2); //8 paires pour 16 places ==> 2 générations différentes par image
                     // Selectionne une carte et génère une image -> au click lance la fonction VERIFIER() ?? Pourquoi pas modif css ??                  onClick='verifier(\"img" + i + "\",                          \"mini" + nb_img + "\")' alt='' />";
-                    document.getElementById('case' + i).innerHTML = "<img style='cursor:pointer;' id='img" + i + "' src='assets/img/" + nb_img + ".png' onClick='verifier(\"img" + i + "\",\"" + nb_img + "\")' alt='' />";
+                    document.getElementById('case' + i).innerHTML = "<img class='img-style' style='cursor:pointer;' id='img" + i + "' src='assets/img/" + nb_img + ".png' onClick='verifier(\"img" + i + "\",\"" + nb_img + "\")' alt='' />";
                     chaine += "-" + nb_alea + "-"; // Ajoute le Nb dans la chaine de test
                     test=false;
                 }			

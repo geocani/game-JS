@@ -61,12 +61,14 @@
 0.0 RESET
 --------------------------------------------------------------*/
 body{
-    background-color: #FED75A;
+
+    background: #FAFF70;
+
     font-family: 'Luckiest Guy', cursive;
 }
 
 h1 {
-    color: rgb(223, 197, 114);
+    color: rgb(253, 203, 37);
     padding-top: 15px;
     padding-bottom: 30px; 
     font-size: 90px;
@@ -194,12 +196,14 @@ table{
 0.0 CARTE
 --------------------------------------------------------------*/
 .carte1{
+    background-color: rgb(253, 203, 37);
     overflow: hidden;
     width: 85px;
     height: 85px;
     background-image: url('../img/back.png');
     background-position: center;
-    background-size: 85px;
+    background-repeat:no-repeat;
+    background-size: 20px;
     border-radius: 10px;
     box-shadow: 
     2px   0  0   #835f0bff, 
@@ -211,6 +215,16 @@ table{
     1px -1px 0   #835f0bff, 
    -1px  1px 0   #835f0bff,
    1px  3px 5px rgb(63, 46, 6);
+}
+.carte1 img{
+    width: 80px;
+    padding: 0;
+}
+
+.carte1:hover{
+    transition: 0.5s;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
 }
 .couleur{
     width: 120px;
@@ -231,9 +245,11 @@ table{
     overflow: hidden;
     width: 85px;
     height: 85px;
+    background-color: rgb(253, 203, 37);
     background-image: url('../img/back.png');
     background-position: center;
-    background-size: 85px;
+    background-repeat:no-repeat;
+    background-size: 20px;
     border-radius: 10px;
     box-shadow: 
     2px   0  0   #835f0bff, 
@@ -246,35 +262,25 @@ table{
    -1px  1px 0   #835f0bff,
    1px  3px 5px rgb(63, 46, 6);
 }
-.carte img{
-    width: 85px;
-    padding: 0;
-}
-.carte1 img{
-    width: 85px;
-    padding: 0;
-}
 .carte2 img{
-    width: 85px;
+    width: 20px;
     padding: 0;
 }
-.carte1:hover{
-    transition: 0.5s;
-    -webkit-transform: rotate(10deg);
-    transform: rotate(10deg);
-}
+
 .carte2:hover{
     transition: 0.5s;
     -webkit-transform: rotate(-10deg);
     transform: rotate(-10deg);
 }
 .carte3 {
+    background-color: rgb(253, 203, 37);
     overflow: hidden;
     width: 85px;
     height: 85px;
     background-image: url('../img/back.png');
     background-position: center;
-    background-size: 85px;
+    background-repeat:no-repeat;
+    background-size: 20px;
     border-radius: 10px;
     box-shadow: 
     2px   0  0   #835f0bff, 
@@ -291,12 +297,18 @@ table{
     transition-property: transform;
   }
 .carte3 img{
-    width: 85px;
+    width: 20px;
 }
 .carte3:hover {
     transform: rotate(-10deg);
     transform: scale(1.1) rotate(4deg);
   }
+.carte img{
+    width: 20px;
+    padding: 0;
+}
+
+
 
 /*--------------------------------------------------------------
 0.0 MEDIA Q
