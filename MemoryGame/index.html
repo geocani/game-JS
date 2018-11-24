@@ -166,7 +166,7 @@
     function attente(){
         setTimeout(function(){ // Parcoure toutes les <img> pour retourner les cartes visiblent - Se déclange au chargement de la page
             for(let i=0; i<16 ; i++){ // Pour chaque img
-                document.getElementById('img' + i).src= "assets/img/back.png"; // Change la source de l'image pour la cacher
+                document.getElementById('img' + i).src= "assets/img/dessin.png"; // Change la source de l'image pour la cacher
             }
             depart = true; // Quand toute les cartes sont retournée, comptabiliser les clics
         }, 1000); // La fonction se lance apres 4s - empas avant retournement des cartes
@@ -216,8 +216,8 @@
                     depart = false; // l'utilisateur ne peux plus cliquer
                     if (carte1 != carte2){ // Si carte1 differente de carte2
                         let attentes = setTimeout(function(){ // Retourne les cartes // S'éfectue au bout de 1s
-                            document.getElementById(case1).src= "assets/img/back.png"; // Retourne case1
-                            document.getElementById(case2).src= "assets/img/back.png"; // Retourne case2
+                            document.getElementById(case1).src= "assets/img/backs.png"; // Retourne case1
+                            document.getElementById(case2).src= "assets/img/backs.png"; // Retourne case2
                             depart = true; // Redonne l'autorisation de cliquer
                             tentative++;
                             nbClics = 0;
