@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"  />
     <title>Memory Game</title>
+    
 </head>
 <body>
     <div class="container">
-        <img class="logo" src="assets/img/titre2.svg" alt="logo">
         <div class="titre">
-            
+            <h1>Memory Game</h1>
         </div>
         <div class="row">
             <div class="col-6">
@@ -166,7 +166,7 @@
     function attente(){
         setTimeout(function(){ // Parcoure toutes les <img> pour retourner les cartes visiblent - Se déclange au chargement de la page
             for(let i=0; i<16 ; i++){ // Pour chaque img
-                document.getElementById('img' + i).src= "assets/img/dessins.png"; // Change la source de l'image pour la cacher
+                document.getElementById('img' + i).src= "assets/img/dessin.png"; // Change la source de l'image pour la cacher
             }
             depart = true; // Quand toute les cartes sont retournée, comptabiliser les clics
         }, 1000); // La fonction se lance apres 4s - empas avant retournement des cartes
@@ -216,8 +216,8 @@
                     depart = false; // l'utilisateur ne peux plus cliquer
                     if (carte1 != carte2){ // Si carte1 differente de carte2
                         let attentes = setTimeout(function(){ // Retourne les cartes // S'éfectue au bout de 1s
-                            document.getElementById(case1).src= "assets/img/dessins.png"; // Retourne case1
-                            document.getElementById(case2).src= "assets/img/dessins.png"; // Retourne case2
+                            document.getElementById(case1).src= "assets/img/backs.png"; // Retourne case1
+                            document.getElementById(case2).src= "assets/img/backs.png"; // Retourne case2
                             depart = true; // Redonne l'autorisation de cliquer
                             tentative++;
                             nbClics = 0;
