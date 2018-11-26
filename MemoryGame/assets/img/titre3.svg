@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="435.26248"
+   height="162.05721"
+   viewBox="0 0 115.16319 42.877637"
+   version="1.1"
+   id="svg4323"
+   inkscape:export-filename="D:\host\www\projets\game-JS\MemoryGame\assets\img\titre.png"
+   inkscape:export-xdpi="110"
+   inkscape:export-ydpi="110"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="titre3.svg">
+  <defs
+     id="defs4317">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5958"
+       x="-0.033299256"
+       width="1.0665985"
+       y="-0.16125956"
+       height="1.3225191">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.50634738"
+         id="feGaussianBlur5960" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5888"
+       x="-0.012055009"
+       width="1.02411"
+       y="-0.035513833"
+       height="1.0710278">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.26317601"
+         id="feGaussianBlur5890" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="145.04262"
+     inkscape:cy="-73.235773"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4320">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-14.805348,-166.98905)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.40027809px;line-height:20;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';letter-spacing:0px;word-spacing:0px;fill:#d0cb54;fill-opacity:1;stroke:#073b3a;stroke-width:0.76501042;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal;filter:url(#filter5888)"
+       x="114.69986"
+       y="0.62036425"
+       id="text1947-8-4-9-3-3-2-5-7"
+       transform="matrix(2.0049604,-0.13064066,0.13064066,2.0049604,-212.22914,217.77484)"><tspan
+         sodipodi:role="line"
+         id="tspan1945-8-2-9-3-5-29-4-7"
+         x="114.69986"
+         y="0.62036425"
+         style="fill:#d0cb54;fill-opacity:1;stroke:#073b3a;stroke-width:0.76501042;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal">gaME</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40.16923523px;line-height:20;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';letter-spacing:0px;word-spacing:0px;fill:#d0cb54;fill-opacity:1;stroke:#073b3a;stroke-width:1.50634634;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       x="4.7564058"
+       y="206.68697"
+       id="text1947-8-4-9-3-3-2-5"
+       transform="matrix(1.0100709,-0.06423632,0.06581492,0.98584395,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan1945-8-2-9-3-5-29-4"
+         x="4.7564058"
+         y="206.68697"
+         style="fill:#d0cb54;fill-opacity:1;stroke:#073b3a;stroke-width:1.50634634;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal">gaME</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.86722374px;line-height:20;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';letter-spacing:0px;word-spacing:0px;fill-opacity:1;stroke:#073b3a;stroke-width:0.49999997;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter5958)"
+       x="129.79353"
+       y="11.870765"
+       id="text1947-8-4-9-9-54-50-0"
+       transform="matrix(1.9768369,0.07332157,-0.07160564,2.0242093,-200.85105,171.17842)"><tspan
+         sodipodi:role="line"
+         id="tspan1945-8-2-9-8-5-8-1"
+         x="129.79353"
+         y="11.870765"
+         style="fill-opacity:1;stroke:#073b3a;stroke-width:0.49999997;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">Memory</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.25806046px;line-height:20;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';letter-spacing:0px;word-spacing:0px;fill:#08a045;fill-opacity:1;stroke:#073b3a;stroke-width:0.97313774;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="62.849697"
+       y="202.42552"
+       id="text1947-8-4-9-9-54-50"
+       transform="rotate(2.07448)"><tspan
+         sodipodi:role="line"
+         id="tspan1945-8-2-9-8-5-8"
+         x="62.849697"
+         y="202.42552"
+         style="fill:#08a045;fill-opacity:1;stroke:#073b3a;stroke-width:0.97313774;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">Memory</tspan></text>
+  </g>
+</svg>

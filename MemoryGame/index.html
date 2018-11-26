@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <img class="logo" src="assets/img/titre2.svg" alt="logo">
+        <img class="logo" src="assets/img/titre3.svg" alt="logo">
         <div class="titre">
             
         </div>
@@ -121,7 +121,7 @@
     let score = 0; // Score 
     let depart = false; // Si les clics sont pris en compte - oui ou non comptabilise les clics
     let tempsDebut = new Date().getTime(); // Sauvegarde l'heure a laquel le jeu a démarré (milliseconde) - Pour chrono ?? Pourquoi pas chrono ??
-    let secondes = 20;
+    let secondes = 60;
     let tentative = 0;
     // FONCTIONS
 
@@ -169,7 +169,7 @@
                 document.getElementById('img' + i).src= "assets/img/dessins.png"; // Change la source de l'image pour la cacher
             }
             depart = true; // Quand toute les cartes sont retournée, comptabiliser les clics
-        }, 1000); // La fonction se lance apres 4s - empas avant retournement des cartes
+        }, 4000); // La fonction se lance apres 4s - empas avant retournement des cartes
     }
     // GENERATION()
     function generation()
