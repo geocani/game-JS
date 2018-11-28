@@ -106,7 +106,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
      inkscape:cx="433.67356"
-     inkscape:cy="1144.8476"
+     inkscape:cy="1030.5619"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -123,7 +123,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1909,7 +1909,7 @@
          y="47.446262"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#0b3534;fill-opacity:1;stroke-width:0.03054939">?</tspan></text>
     <rect
-       style="fill:#08a045;fill-opacity:1;stroke:#073b3a;stroke-width:0.2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#5faf7d;fill-opacity:1;stroke:#073b3a;stroke-width:0.2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1935-3-8-8-4"
        width="8.0849028"
        height="8.2185383"
@@ -1934,7 +1934,7 @@
        inkscape:transform-center-x="0.3813301"
        inkscape:transform-center-y="-0.18813262" />
     <rect
-       style="fill:#08a045;fill-opacity:1;stroke:#073b3a;stroke-width:0.2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#5faf7d;fill-opacity:1;stroke:#073b3a;stroke-width:0.2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1935-8-44-0"
        width="8.0849028"
        height="8.2185383"

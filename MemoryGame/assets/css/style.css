@@ -53,19 +53,23 @@
     margin-top: 30px;
 }
 .principe{
-    padding-top: 30px;
-    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    
+    
 }
 .logo{
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 /*--------------------------------------------------------------
 0.0 RESET
 --------------------------------------------------------------*/
 body{
 
-    background: #0b6e4fff;
+    background-color: #0b6e4f;
+    background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
     font-family: 'Luckiest Guy', cursive;
 }
@@ -103,23 +107,23 @@ h1 {
 	z-index: -1;
 } */
 h2{
-    color: #08a045ff;
+    color: #d0cb54ff;
     text-shadow: 
-        2px   0  0   #835f0bff, 
-        -2px   0  0   #835f0bff, 
-        0    2px 0   #835f0bff, 
-        0   -2px 0   #835f0bff, 
-        1px  1px 0   #835f0bff, 
-        -1px -1px 0   #835f0bff, 
-        1px -1px 0   #835f0bff, 
-        -1px  1px 0   #835f0bff,
-        1px  1px 5px #835f0bff;
+        2px   0  0   #073b3aff, 
+        -2px   0  0   #073b3aff, 
+        0    2px 0   #073b3aff, 
+        0   -2px 0   #073b3aff, 
+        1px  1px 0   #073b3aff, 
+        -1px -1px 0   #073b3aff, 
+        1px -1px 0   #073b3aff, 
+        -1px  1px 0   #073b3aff,
+        1px  1px 5px #073b3aff;
     margin-bottom: 15px; 
     margin-top: 30px;
     font-size: 70px;
 }
-h3{
-    color: #08a045ff;
+/* h3{
+    color: #d0cb54ff;
     text-shadow: 
         2px   2px  2px   #073b3aff, 
         -2px   2px  2px   #073b3aff, 
@@ -130,6 +134,20 @@ h3{
         1px -1px 0   #073b3aff, 
         -1px  1px 0   #073b3aff,
         1px  1px 5px rgb(7, 11, 247);
+    margin-bottom: 15px; 
+} */
+h3{
+    color: #d0cb54ff;
+    text-shadow: 
+        2px   0  0   #073b3aff, 
+        -2px   0  0   #073b3aff, 
+        0    2px 0   #073b3aff, 
+        0   -2px 0   #073b3aff, 
+        1px  1px 0   #073b3aff, 
+        -1px -1px 0   #073b3aff, 
+        1px -1px 0   #073b3aff, 
+        -1px  1px 0   #073b3aff,
+        1px  1px 5px #073b3aff;
     margin-bottom: 15px; 
 }
 h4{
@@ -167,7 +185,7 @@ p{
 table{
     margin: auto;
     border-collapse: separate;
-    border-spacing: 10px;
+    border-spacing: 5px;
 }
 .btn-color{
     color: #073b3aff;
@@ -175,7 +193,7 @@ table{
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #08a045ff;
+    background-color: #d0cb54ff;
     box-shadow: 
     2px   0  0   #073b3aff, 
     -2px   0  0   #073b3aff, 
@@ -193,7 +211,7 @@ table{
 .btn-color:hover{
     transition: 0.2s;
     transform: rotate(10deg);
-    background-color: #5ec338ff;
+    background-color: #08a045ff;
 
 }
 
@@ -201,26 +219,20 @@ table{
 0.0 CARTE
 --------------------------------------------------------------*/
 .carte1{
-    background-color: #08a045ff;
+    box-sizing: content-box;
+    border: 4px solid #073b3aff;
+    border-radius: 9px;
+    background-color: #d0cb54ff;
     overflow: hidden;
-    width: 85px;
-    height: 85px;
+    min-width: 75px;
+    height: 75px;
     background-image: url('../img/back.png');
     background-position: center;
     background-repeat:no-repeat;
     background-size: 20px;
-    border-radius: 10px;
-    box-shadow: 
-    2px   0  0   #073b3aff, 
-    -2px   0  0   #073b3aff, 
-    0    2px 0   #073b3aff, 
-    0   -2px 0   #073b3aff, 
-    1px  1px 0   #073b3aff, 
-    -1px -1px 0   #073b3aff, 
-    1px -1px 0   #073b3aff, 
-    -1px  1px 0   #073b3aff,
-    1px  1px 5px #073b3aff;
-   1px  3px 5px rgb(63, 46, 6);
+    
+    
+   
 }
 .carte1 img{
     width: 80px;
@@ -231,42 +243,22 @@ table{
     transition: 0.5s;
     -webkit-transform: rotate(10deg);
     transform: rotate(10deg);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.308);
 }
-.couleur{
-    width: 120px;
-    height: 70px;
-    background-color: rgb(253, 203, 37);
-    box-shadow: 
-    2px   0  0   #835f0bff, 
-   -2px   0  0   #835f0bff, 
-    0    2px 0   #835f0bff, 
-    0   -2px 0   #835f0bff, 
-    1px  1px 0   #835f0bff, 
-   -1px -1px 0   #835f0bff, 
-    1px -1px 0   #835f0bff, 
-   -1px  1px 0   #835f0bff,
-   1px  3px 5px rgb(63, 46, 6);
-}
+
 .carte2{
+    box-sizing: content-box;
+    border: 4px solid #073b3aff;
+    border-radius: 9px;
     overflow: hidden;
     width: 85px;
     height: 85px;
-    background-color: #08a045ff;
+    background-color: #d0cb54ff;
     background-image: url('../img/back.png');
     background-position: center;
     background-repeat:no-repeat;
     background-size: 20px;
     border-radius: 10px;
-    box-shadow: 
-    2px   0  0   #073b3aff, 
-    -2px   0  0   #073b3aff, 
-    0    2px 0   #073b3aff, 
-    0   -2px 0   #073b3aff, 
-    1px  1px 0   #073b3aff, 
-    -1px -1px 0   #073b3aff, 
-    1px -1px 0   #073b3aff, 
-    -1px  1px 0   #073b3aff,
-    1px  1px 5px #073b3aff;
 }
 .carte2 img{
     width: 80px;
@@ -277,9 +269,13 @@ table{
     transition: 0.5s;
     -webkit-transform: rotate(-10deg);
     transform: rotate(-10deg);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.308);
 }
 .carte3 {
-    background-color: rgb(95, 175, 127);
+    box-sizing: content-box;
+    border: 4px solid #073b3aff;
+    border-radius: 9px;
+    background-color: #d0cb54ff;
     overflow: hidden;
     width: 85px;
     height: 85px;
@@ -288,16 +284,6 @@ table{
     background-repeat:no-repeat;
     background-size: 20px;
     border-radius: 10px;
-    box-shadow: 
-    2px   0  0   #073b3aff, 
-    -2px   0  0   #073b3aff, 
-    0    2px 0   #073b3aff, 
-    0   -2px 0   #073b3aff, 
-    1px  1px 0   #073b3aff, 
-    -1px -1px 0   #073b3aff, 
-    1px -1px 0   #073b3aff, 
-    -1px  1px 0   #073b3aff,
-    1px  1px 5px #073b3aff;
     transform: perspective(1px) translateZ(0);
     transition-duration: 0.3s;
     transition-property: transform;
@@ -308,14 +294,37 @@ table{
 .carte3:hover {
     transform: rotate(-10deg);
     transform: scale(1.1) rotate(4deg);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.308);
   }
 .carte img{
     width: 20px;
     padding: 0;
 }
-
-
-
+.cl1{
+    color: blue;
+}
+.cl2{
+    color: green;
+}
+.lien{
+    margin: auto;
+    display: flex;
+}
+.liens{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.liens img{
+    width: 35px;
+    margin-left: 15px;
+}
 /*--------------------------------------------------------------
 0.0 MEDIA Q
 --------------------------------------------------------------*/
+@media all and (max-device-width: 480px)
+{
+    .container{
+        
+    }
+}

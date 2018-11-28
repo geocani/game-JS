@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="387.73068"
+   height="145.50298"
+   viewBox="0 0 102.58707 38.497664"
+   version="1.1"
+   id="svg4323"
+   inkscape:export-filename="D:\host\www\projets\game-JS\MemoryGame\assets\img\titre.png"
+   inkscape:export-xdpi="110"
+   inkscape:export-ydpi="110"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="titre4.svg">
+  <defs
+     id="defs4317" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="180.3219"
+     inkscape:cy="20.055317"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4320">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-21.738377,-167.62413)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.32624817px;line-height:20;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';letter-spacing:0px;word-spacing:0px;fill:#d0cb54;fill-opacity:1;stroke:#073b3a;stroke-width:1.39973414;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       x="10.486633"
+       y="203.84364"
+       id="text1947-8-4-9-3-3-2-5"
+       transform="matrix(1.0099476,-0.06424416,0.06580688,0.98596432,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan1945-8-2-9-3-5-29-4"
+         x="10.486633"
+         y="203.84364"
+         style="fill:#d0cb54;fill-opacity:1;stroke:#073b3a;stroke-width:1.39973414;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal">gaME</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.84684753px;line-height:20;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';letter-spacing:0px;word-spacing:0px;fill:#08a045;fill-opacity:1;stroke:#073b3a;stroke-width:0.94995058;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="64.477394"
+       y="195.87796"
+       id="text1947-8-4-9-9-54-50"
+       transform="matrix(0.97399317,0.03714079,-0.03528031,1.0253559,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan1945-8-2-9-8-5-8"
+         x="64.477394"
+         y="195.87796"
+         style="fill:#08a045;fill-opacity:1;stroke:#073b3a;stroke-width:0.94995058;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">Memory</tspan></text>
+  </g>
+</svg>
