@@ -15,6 +15,7 @@
 <script>
 // DECLARATION VARIABLES
 
+// BALLE ET POSITION
 let canvas = document.getElementById("plateau");
 let context = canvas.getContext("2d"); // context - stocke le contexte du rendu 2d - peinceau
 let x = canvas.width / 2; // Dessinfition axe X 
@@ -23,25 +24,21 @@ let dx = 2; // Position x pour la prochaine image
 let dy = -2; // Position y pour la prochaine image
 let balleRayon = 10; // Rayon de la balle
 let color = context.fillStyle
+// RAQUETTE ET POSITION
+let raquetteWidth = 75; // Largeur
+let raquetteHeight = 10; // Hauteur
+let raquetteX = (canvas.width - raquetteWidth) / 2; // Position X
+let pressRight = false; // Active ou desative la fleche gauche
+let pressLeft = false; // Active ou desative la fleche droite 
 
 // FONCTIONS
-
-//**
-// Si la prochaine image touche le dessus
-// Inverser sa trajectoir
-// if (y + dy < 0){ 
-//     dy = -dy;
-// }
-// SI la prochaine image touche le bas
-// Inverser sa trajectoir
-// if (y + dy > canvas.height){
-//     dy = -dy;
-// }
-
-
-
-
-
+function raquette(){
+    context.beginPath()
+    context.rect(raquetteX, canvas.height - raquetteHeight, raquetteWidth, raquetteHeight);
+    context.fillStyle = "green";
+    context.fill();
+    context.closePath()
+}
 // FORME DE LA BALLE
 function ball(){
     context.beginPath();
@@ -52,9 +49,9 @@ function ball(){
 }
 // DESSINE CHAQUE IMAGE DE LA BALLE
 function draw(){
-    
     context.clearRect(0, 0, canvas.width, canvas.height); // Efface contenu selection - X-sup-gauche, Y-sup-gauche, X-inf-droit, Y-inf-droit
     ball(); // Dessine la balle
+    raquette(); // Dessine raquette
     x += dx; // Reassigne x pour la prochaine image
     y += dy; // Reassigne y pour la prochaine image
     if(x + dx > canvas.width - balleRayon || x + dx < balleRayon){ // Si le bord de la balle touche la gauche OU la droite
@@ -63,14 +60,44 @@ function draw(){
     if(y + dy > canvas.height - balleRayon || y + dy < balleRayon){ // Si le bord de la balle touche le bas OU le haut
         dy = -dy; // Inverser sa trajectoir
     }
+    // Deplacement raquette
+    if(pressLeft && raquetteX < canvas.width - raquetteWidth) { // Verifie colision bord gauche raquette
+    raquetteX += 7;
+    }
+    else if(pressRight && raquetteX > 0) { // Verifie colision bord droit raquette
+        raquetteX -= 7;
+    }
+
+
+}
+
+// VERIFIE L ACTION DES TOUCHES
+function keyDownHandler(e){ 
+    if(e.keyCode == 39){ // Si la fleche gauche est enfoncé
+        pressLeft = true; // Active le mouvement
+    }
+    else if(e.keyCode == 37){ // Si la fleche droite est enfoncé
+        pressRight = true; // Active le mouvement
+    }
+}
+function keyUpHandler(e){
+    if(e.keyCode == 39){ // Si la fleche gauche est relachée
+        pressLeft = false;
+    }
+    else if(e.keyCode == 37){ // Si la fleche droite est relachée
+        pressRight = false;
+    }
 }
 
 
 
-
-
-// 
+// APPEL FONCTION
+document.addEventListener("keydown", keyDownHandler, false); // KeyWownHandler() declanché quand une touche est enfoncée
+document.addEventListener("keyup", keyUpHandler, false); // keyUpHandler() déclanché quand touche est relachée
 setInterval(draw, 10); // imprime une image toute les 10 millisecondes
+
+
+
 
 </script>
 

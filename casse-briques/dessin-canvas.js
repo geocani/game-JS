@@ -18,4 +18,14 @@ ctx.fill();
 ctx.closePath();
 
 
-
+//**
+// Si la prochaine image touche le dessus
+// Inverser sa trajectoir
+// if (y + dy < 0){ 
+//     dy = -dy;
+// }
+// SI la prochaine image touche le bas
+// Inverser sa trajectoir
+// if (y + dy > canvas.height){
+//     dy = -dy;
+// }
