@@ -42,7 +42,7 @@ let briques = []; // Enregistre les briques dans un tab bidimentionnel
 for(let c=0; c < briqColCount; c++) {
     briques[c] = [];
     for(let r=0; r < briqRowCunt; r++) {
-        briques[c][r] = { x: 0, y: 0 };
+        briques[c][r] = { x: 0, y: 0, status: 1 }; // 1=brique affichée 2=brique cachée
     }
 }
 
@@ -52,6 +52,23 @@ for(let c=0; c < briqColCount; c++) {
 
 // FONCTIONS
 
+// VERIFIE L ACTION DES TOUCHES DU CLAVIER
+function keyDownHandler(e){ 
+    if(e.keyCode == 39){ // Si la fleche gauche est enfoncé
+        pressLeft = true; // Active le mouvement
+    }
+    else if(e.keyCode == 37){ // Si la fleche droite est enfoncé
+        pressRight = true; // Active le mouvement
+    }
+}
+function keyUpHandler(e){
+    if(e.keyCode == 39){ // Si la fleche gauche est relachée
+        pressLeft = false;
+    }
+    else if(e.keyCode == 37){ // Si la fleche droite est relachée
+        pressRight = false;
+    }
+}
 // STYLE RAQUETTE
 function raquette(){
     context.beginPath()
@@ -68,28 +85,45 @@ function ball(){
     context.fill();
     context.closePath();
 }
-// DESSINE ET AFFICHE LES BRIQUES
+// AFFICHE LES BRIQUES
 function briq(){
     for(let c=0; c<briqColCount; c++){ // Chaque colonne
         for( r=0; r<briqRowCunt; r++){ // Chaque rangée
-            let briqX = (c*(briqWidth+briqPadding))+briqPaddingLeft;
-            let briqY = (r*(briqHeight+briqPadding))+briqPaddingTop;
-            briques[c][r].x = briqX;
-            briques[c][r].y = briqY;
-            context.beginPath();
-            context.rect(briqX, briqY, briqWidth, briqHeight);
-            context.fillStyle = "blue";
-            context.fill();
-            context.closePath();
+            if(briques[c][r].status == 1){ // Si la brique n'a pas été touché
+                let briqX = (c*(briqWidth+briqPadding))+briqPaddingLeft;
+                let briqY = (r*(briqHeight+briqPadding))+briqPaddingTop;
+                briques[c][r].x = briqX;
+                briques[c][r].y = briqY;
+                context.beginPath();
+                context.rect(briqX, briqY, briqWidth, briqHeight);
+                context.fillStyle = "blue";
+                context.fill();
+                context.closePath();
+            }
         }
     }
 }
-// DESSINE CHAQUE IMAGE DE LA BALLE
+// DETECTE SI COLLISION - PARCOURT COOR BRIQUES ET COMPARE AVEC COOR BALLE  
+function briqCollision(){
+    for(let c=0; c<briqColCount; c++){
+        for(let r=0; r<briqRowCunt; r++){
+            let b = briques[c][r]; // Coordonnées brique de l'itération en cours
+            if(b.status == 1){ // Si la brique est visible
+                if(x > b.x && x < b.x+briqWidth && y > b.y && y < b.y+briqHeight){ // Si brique touchée
+                    dy = -dy; // Inverser trajectoir
+                    b.status = 0; // Cacher la brique
+                }
+            }
+        }
+    }
+}
+// FONCTION PRINCIPALE
 function draw(){
     context.clearRect(0, 0, canvas.width, canvas.height); // Efface contenu selection - X-sup-gauche, Y-sup-gauche, X-inf-droit, Y-inf-droit
-    briq();
-    ball(); // Dessine la balle
-    raquette(); // Dessine raquette
+    briq(); 
+    ball(); 
+    raquette(); 
+    briqCollision()
     x += dx; // Reassigne x pour la prochaine image
     y += dy; // Reassigne y pour la prochaine image
     if(x + dx > canvas.width - balleRayon || x + dx < balleRayon){ // Si le bord de la balle touche la gauche OU la droite
@@ -117,30 +151,11 @@ function draw(){
         raquetteX -= 7;
     }
 }
-// VERIFIE L ACTION DES TOUCHES
-function keyDownHandler(e){ 
-    if(e.keyCode == 39){ // Si la fleche gauche est enfoncé
-        pressLeft = true; // Active le mouvement
-    }
-    else if(e.keyCode == 37){ // Si la fleche droite est enfoncé
-        pressRight = true; // Active le mouvement
-    }
-}
-function keyUpHandler(e){
-    if(e.keyCode == 39){ // Si la fleche gauche est relachée
-        pressLeft = false;
-    }
-    else if(e.keyCode == 37){ // Si la fleche droite est relachée
-        pressRight = false;
-    }
-}
-
-
 
 // APPEL FONCTION
 document.addEventListener("keydown", keyDownHandler, false); // KeyWownHandler() declanché quand une touche est enfoncée
 document.addEventListener("keyup", keyUpHandler, false); // keyUpHandler() déclanché quand touche est relachée
-setInterval(draw, 10); // imprime une image toute les 10 millisecondes
+setInterval(draw, 10); // lance et réactualise la fonction draw() toute les 10 millisecondes
 console.log(briques);
 
 
