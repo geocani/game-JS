@@ -15,22 +15,31 @@
 <script>
 
 let canvas = document.getElementById("plateau");
-let ctx = canvas.getContext("2d"); // ctx - stocke le contexte du rendu 2d - peinceau
+let context = canvas.getContext("2d"); // context - stocke le contexte du rendu 2d - peinceau
+let x = canvas.width / 2; // Dessinfition axe X 
+let y = canvas.height - 30; // Dessinfition axe y
+let dx = 2; // Position x pour la prochaine image
+let dy = -2; // Position y pour la prochaine image
 
-// CARRE - RECTANGLE
-ctx.beginPath(); // Debut du chemin 
-ctx.rect(20, 40, 50, 50); // Coor-sup-gauche-X, coor-sup-droite-Y, largeur, hauteur
-ctx.strokeStyle = "green"; // Stocke couleur utilisé par strock()
-ctx.stroke(); // Peint les contours
-ctx.fillStyle = "#ff0000"; // Stocke couleur utilisé par fill()
-ctx.fill(); // Peint la forme
-ctx.closePath(); // Fin du chemin 
-// CERCLE 
-ctx.beginPath();
-ctx.arc(240, 160, 20, 0, Math.PI*2, false); // CoorX, coorY, rayon, angle-debut, angle-fin, direction-dessin FALSE=sens-aiguilles TRUE=sens-invers
-ctx.fillStyle = "green";
-ctx.fill();
-ctx.closePath();
+// FORME DE LA BALLE
+function ball(){
+    context.beginPath();
+    context.arc(x, y, 10, 0, Math.PI*2);
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+}
+// DESSINE CHAQUE IMAGE DE LA BALLE
+function draw(){
+    
+    context.clearRect(0, 0, canvas.width, canvas.height); // Efface contenu selection - X-sup-gauche, Y-sup-gauche, X-inf-droit, Y-inf-droit
+    ball(); // Dessine la balle
+    x += dx; // Reassigne x pour la prochaine image
+    y += dy; // Reassigne y pour la prochaine image
+}
+
+setInterval(draw, 10); // imprime une image toute les 10 millisecondes
+
 </script>
 
 
