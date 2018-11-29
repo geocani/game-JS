@@ -11,7 +11,7 @@
 
     <h1>CASSE BRIQUES</h1>
     <canvas id="plateau" width="480" height="320"></canvas>
-    <button onclick="setInterval(draw, 10)">START</button>
+
 <script>
 // DECLARATION VARIABLES
 let vies = 3;
@@ -31,14 +31,14 @@ let raquetteHeight = 10; // Hauteur
 let raquetteX = (canvas.width - raquetteWidth) / 2; // Position X
 let pressRight = false; // Active ou desative la fleche gauche
 let pressLeft = false; // Active ou desative la fleche droite 
-// BRIQUES ET POSITION
+// BRIQUE ET POSITION
 let briqRowCunt = 3; // Nb rangées
 let briqColCount = 5; // nb colonnes
 let briqWidth = 75; // Largeur
 let briqHeight = 20; // Hauteur
 let briqPadding = 10; // Largeur
-let briqPaddingTop = 30; // padding bord haut
-let briqPaddingLeft = 30; // Padding gauche
+let briqPaddingTop = 30; // Largeur
+let briqPaddingLeft = 30; // Largeur
 let briques = []; // Enregistre les briques dans un tab bidimentionnel
 for(let c=0; c < briqColCount; c++) {
     briques[c] = [];
@@ -47,15 +47,22 @@ for(let c=0; c < briqColCount; c++) {
     }
 }
 
+
+
+
+
+
 // FONCTIONS
 
-// VERIFIE L ACTION DES TOUCHES DU CLAVIER ET DE LA SOURIS
+// VERIFIE L ACTION DE LA SOURIS
 function mouseMoveHandler(e){
     let relativeX = e.clientX - canvas.offsetLeft;
     if(relativeX > 0 && relativeX < canvas.width){
         raquetteX = relativeX - raquetteWidth / 2;
     }
 }
+
+// VERIFIE L ACTION DES TOUCHES DU CLAVIER
 function keyDownHandler(e){ 
     if(e.keyCode == 39){ // Si la fleche gauche est enfoncé
         pressLeft = true; // Active le mouvement
@@ -178,16 +185,18 @@ function draw(){
     if(pressLeft && raquetteX < canvas.width - raquetteWidth) { // Verifie colision bord gauche raquette
     raquetteX += 7;
     }
-    else if(pressRight && raquetteX > s0) { // Verifie colision bord gauche raquette
+    else if(pressRight && raquetteX > 0) { // Verifie colision bord gauche raquette
         raquetteX -= 7;
     }
+requestAnimationFrame(draw);
 }
 
 // APPEL FONCTION
 document.addEventListener("mousemove", mouseMoveHandler, false); // mouseMoveHandler() déclanché au mouvement de la souris
 document.addEventListener("keydown", keyDownHandler, false); // KeyWownHandler() declanché quand une touche est enfoncée
 document.addEventListener("keyup", keyUpHandler, false); // keyUpHandler() déclanché quand touche est relachée
-
+draw()
+console.log(briques);
 
 
 
