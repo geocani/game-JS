@@ -13,6 +13,7 @@
     <canvas id="plateau" width="480" height="320"></canvas>
 
 <script>
+// DECLARATION VARIABLES
 
 let canvas = document.getElementById("plateau");
 let context = canvas.getContext("2d"); // context - stocke le contexte du rendu 2d - peinceau
@@ -20,11 +21,31 @@ let x = canvas.width / 2; // Dessinfition axe X
 let y = canvas.height - 30; // Dessinfition axe y
 let dx = 2; // Position x pour la prochaine image
 let dy = -2; // Position y pour la prochaine image
+let balleRayon = 10; // Rayon de la balle
+let color = context.fillStyle
+
+// FONCTIONS
+
+//**
+// Si la prochaine image touche le dessus
+// Inverser sa trajectoir
+// if (y + dy < 0){ 
+//     dy = -dy;
+// }
+// SI la prochaine image touche le bas
+// Inverser sa trajectoir
+// if (y + dy > canvas.height){
+//     dy = -dy;
+// }
+
+
+
+
 
 // FORME DE LA BALLE
 function ball(){
     context.beginPath();
-    context.arc(x, y, 10, 0, Math.PI*2);
+    context.arc(x, y, balleRayon, 0, Math.PI*2);
     context.fillStyle = "red";
     context.fill();
     context.closePath();
@@ -36,8 +57,19 @@ function draw(){
     ball(); // Dessine la balle
     x += dx; // Reassigne x pour la prochaine image
     y += dy; // Reassigne y pour la prochaine image
+    if(x + dx > canvas.width - balleRayon || x + dx < balleRayon){ // Si le bord de la balle touche la gauche OU la droite
+        dx = -dx; // Inverser sa trajectoir
+    }
+    if(y + dy > canvas.height - balleRayon || y + dy < balleRayon){ // Si le bord de la balle touche le bas OU le haut
+        dy = -dy; // Inverser sa trajectoir
+    }
 }
 
+
+
+
+
+// 
 setInterval(draw, 10); // imprime une image toute les 10 millisecondes
 
 </script>
