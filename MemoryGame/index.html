@@ -83,8 +83,8 @@
                     <div class="msg-perdu">
                         <p>Vous avez perdu, cliquez sur recommencer.</p>
                     </div>
-                    <button type="button" class="stop btn btn-color">STOP</button> 
-                    <button type="button" class="recommencer btn btn-color" onClick="start()">RECOMMENCER</button> 
+                    
+                    <button type="button" class="recommencer btn btn-color" onClick="javascript:window.location.reload()">RECOMMENCER</button> 
                 </div>
                 <!-- Apres la partie -->
                 <div class="right3">
@@ -150,7 +150,7 @@
     let score = 0; // Score 
     let depart = false; // Si les clics sont pris en compte - oui ou non comptabilise les clics
     let tempsDebut = new Date().getTime(); // Sauvegarde l'heure a laquel le jeu a démarré (milliseconde) - Pour chrono ?? Pourquoi pas chrono ??
-    let secondes = 30;
+    let secondes = 20;
     let tentative = 0;
     // FONCTIONS
 
@@ -162,7 +162,7 @@
 
     // START
     function start(){
-        $('.chrono').html("<h2>60</h2>"); // AFFICHER perdu
+        $('.chrono').html("<h2>20</h2>"); // AFFICHER perdu
         $('.conseil').css({"display": "block"})
         $('.msg-perdu').css({"display":"none"})
         $('.stop').css({"display": "block"})

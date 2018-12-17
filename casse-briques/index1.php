@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Casse-Briques</title>
 </head>
 <body>
 
-    <h1>CASSE BRIQUES</h1>
-    <canvas id="plateau" width="480" height="320"></canvas>
-    <button onclick="setInterval(draw, 10)">START</button>
+    <div class="cont">
+        <div class="cont-titre">
+            <h1>CASSE BRIQUES</h1>
+        </div>
+        <div class="can">
+            <canvas id="plateau" width="480" height="320"></canvas>
+        </div>
+        <div class="btn-play">
+            <button onclick="setInterval(draw, 10)">START</button>
+        </div>
+    </div>
+
+
 <script>
 // DECLARATION VARIABLES
 let vies = 3;
@@ -88,7 +99,7 @@ function afficheVies(){
 function raquette(){
     context.beginPath()
     context.rect(raquetteX, canvas.height - raquetteHeight, raquetteWidth, raquetteHeight);
-    context.fillStyle = "green";
+    context.fillStyle = "#00a0f0";
     context.fill();
     context.closePath()
 }
@@ -111,7 +122,7 @@ function briq(){
                 briques[c][r].y = briqY;
                 context.beginPath();
                 context.rect(briqX, briqY, briqWidth, briqHeight);
-                context.fillStyle = "blue";
+                context.fillStyle = "#c9be29";
                 context.fill();
                 context.closePath();
             }
